@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\RepairManagement.Api.props" />
+</Project>

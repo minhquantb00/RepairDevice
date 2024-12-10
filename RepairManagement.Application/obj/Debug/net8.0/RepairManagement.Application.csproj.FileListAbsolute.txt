@@ -1,0 +1,5 @@
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Application\obj\Debug\net8.0\RepairManagement.Application.csproj.AssemblyReference.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Application\obj\Debug\net8.0\RepairManagement.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Application\obj\Debug\net8.0\RepairManagement.Application.AssemblyInfoInputs.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Application\obj\Debug\net8.0\RepairManagement.Application.AssemblyInfo.cs
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Application\obj\Debug\net8.0\RepairManagement.Application.csproj.CoreCompileInputs.cache

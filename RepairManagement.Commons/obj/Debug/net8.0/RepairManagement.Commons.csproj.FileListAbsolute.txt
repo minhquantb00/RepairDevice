@@ -1,0 +1,12 @@
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\RepairManagement.Commons.csproj.AssemblyReference.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\RepairManagement.Commons.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\RepairManagement.Commons.AssemblyInfoInputs.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\RepairManagement.Commons.AssemblyInfo.cs
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\RepairManagement.Commons.csproj.CoreCompileInputs.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\bin\Debug\net8.0\RepairManagement.Commons.deps.json
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\bin\Debug\net8.0\RepairManagement.Commons.dll
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\bin\Debug\net8.0\RepairManagement.Commons.pdb
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\RepairManagement.Commons.dll
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\refint\RepairManagement.Commons.dll
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\RepairManagement.Commons.pdb
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Commons\obj\Debug\net8.0\ref\RepairManagement.Commons.dll

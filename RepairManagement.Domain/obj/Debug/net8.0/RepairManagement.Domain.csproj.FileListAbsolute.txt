@@ -1,0 +1,15 @@
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairManagement.Domain.csproj.AssemblyReference.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairManagement.Domain.AssemblyInfoInputs.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairManagement.Domain.AssemblyInfo.cs
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairManagement.Domain.csproj.CoreCompileInputs.cache
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\bin\Debug\net8.0\RepairManagement.Domain.deps.json
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\bin\Debug\net8.0\RepairManagement.Domain.dll
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\bin\Debug\net8.0\RepairManagement.Domain.pdb
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\bin\Debug\net8.0\RepairManagement.Commons.dll
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\bin\Debug\net8.0\RepairManagement.Commons.pdb
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairMa.33048420.Up2Date
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairManagement.Domain.dll
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\refint\RepairManagement.Domain.dll
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\RepairManagement.Domain.pdb
+D:\ProjectCSharp\RepairManagement\RepairManagement\RepairManagement.Domain\obj\Debug\net8.0\ref\RepairManagement.Domain.dll

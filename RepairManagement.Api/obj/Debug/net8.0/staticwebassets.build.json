@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "56mrEpw7kk+l4guBPS2gfjOQFhU6N1HpEJtqOzd/y8c=",
+  "Source": "RepairManagement.Api",
+  "BasePath": "_content/RepairManagement.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

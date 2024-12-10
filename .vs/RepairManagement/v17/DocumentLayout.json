@@ -1,0 +1,1350 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\payloads\\responsedatas\\responseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\payloads\\responsedatas\\responseobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\repositories\\specificationevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\repositories\\specificationevaluator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\handleemail\\handlesendemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\handleemail\\handlesendemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\repositories\\specificationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\repositories\\specificationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\repositories\\specificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\repositories\\specificationbuilder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\repositories\\basespecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\repositories\\basespecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\repository\\ispecificationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\repository\\ispecificationfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\repository\\ispecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\repository\\ispecification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\dataaccess\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\dataaccess\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\nguoidung.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\xuatnhapkho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\xuatnhapkho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\linhkien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\linhkien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\thongbao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\thietbisuachua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\thietbisuachua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\thietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\thietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\phancongcongviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\phancongcongviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\loaithietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\loaithietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\linhkiensuachuathietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\linhkiensuachuathietbi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\lichsutichdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\lichsutichdiem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\lichsusuachua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\lichsusuachua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\lichsuchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\lichsuchat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\hoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\hieusuatnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\hieusuatnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\hangtonkho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\hangtonkho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\faq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\faq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\datlichsuachua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\datlichsuachua.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\danhgiadichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\danhgiadichvu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\confirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\confirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\chiphiphatsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\chiphiphatsinh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\entities\\baohanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\entities\\baohanh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\enums\\enumerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\enums\\enumerate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\handle\\email\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\handle\\email\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\payloads\\responses\\email\\dataresponsemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\payloads\\responses\\email\\dataresponsemessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\handle\\email\\request_message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\handle\\email\\request_message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\handle\\email\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\handle\\email\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\handle\\media\\handleuploadimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\handle\\media\\handleuploadimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\handle\\media\\handlecheckimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\handle\\media\\handlecheckimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\guard\\guardextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\guard\\guardextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\guard\\guard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\guard\\guard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.application\\guard\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{276434FA-F96E-4E1F-9452-C922E53EE6BF}|RepairManagement.Application\\RepairManagement.Application.csproj|solutionrelative:repairmanagement.application\\guard\\error.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.infrastructure\\dataaccess\\idbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{251BDEAD-3088-4159-B936-23E9FA93031B}|RepairManagement.Infrastructure\\RepairManagement.Infrastructure.csproj|solutionrelative:repairmanagement.infrastructure\\dataaccess\\idbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.domain\\unitofworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E1E8006-8B13-49EB-9D69-D3A849F67E64}|RepairManagement.Domain\\RepairManagement.Domain.csproj|solutionrelative:repairmanagement.domain\\unitofworks\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\ultilitiesglobal\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\ultilitiesglobal\\utilities.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\helpers\\pathhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\helpers\\pathhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\helpers\\commonhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\helpers\\commonhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\handlevnpay\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\handlevnpay\\vnpaylibrary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\handlevnpay\\datavnpay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\handlevnpay\\datavnpay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\handlepagination\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\handlepagination\\pagination.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\handlepagination\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\handlepagination\\pagedresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\handleemail\\emailto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\handleemail\\emailto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\features\\ihasmodificationtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\features\\ihasmodificationtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\features\\ihascreationtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\features\\ihascreationtime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\features\\ideletable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\features\\ideletable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\features\\icloneable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\features\\icloneable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\features\\iactivatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\features\\iactivatable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\datetimeextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\datetimeextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\collectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\collectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\conversionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\conversionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\stringextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\stringextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\querystring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\querystring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\queryableextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\queryableextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\enumerableextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\enumerableextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\extensions\\dictionaryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\extensions\\dictionaryextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\exceptions\\invalidexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\exceptions\\invalidexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\exceptions\\existexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\exceptions\\existexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\base\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\constants\\constant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\constants\\constant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\configuration\\emailconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\configuration\\emailconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\base\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\base\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.commons\\base\\ihaskey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AFE04767-1058-49B3-9DF7-4AABB4A11184}|RepairManagement.Commons\\RepairManagement.Commons.csproj|solutionrelative:repairmanagement.commons\\base\\ihaskey.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{82C4D365-6C0F-4079-8981-46EADC273C0B}|RepairManagement.Api\\RepairManagement.Api.csproj|d:\\projectcsharp\\repairmanagement\\repairmanagement\\repairmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{82C4D365-6C0F-4079-8981-46EADC273C0B}|RepairManagement.Api\\RepairManagement.Api.csproj|solutionrelative:repairmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ResponseObject.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Payloads\\ResponseDatas\\ResponseObject.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Payloads\\ResponseDatas\\ResponseObject.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Payloads\\ResponseDatas\\ResponseObject.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Payloads\\ResponseDatas\\ResponseObject.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T11:03:07.567Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LinhKien.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LinhKien.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\LinhKien.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LinhKien.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\LinhKien.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:51:38.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NguoiDung.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\NguoiDung.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\NguoiDung.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\NguoiDung.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\NguoiDung.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:46:58.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ThongBao.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ThongBao.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\ThongBao.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ThongBao.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\ThongBao.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:53:24.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\UserRole.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\UserRole.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\UserRole.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\UserRole.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:49:01.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "XuatNhapKho.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\XuatNhapKho.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\XuatNhapKho.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\XuatNhapKho.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\XuatNhapKho.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:53:04.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\DataAccess\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\DataAccess\\AppDbContext.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\DataAccess\\AppDbContext.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\DataAccess\\AppDbContext.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAIwCgAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:17:37.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Repository\\IRepository.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Repository\\IRepository.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Repository\\IRepository.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Repository\\IRepository.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAcwBQAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:27:02.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ISpecification.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Repository\\ISpecification.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Repository\\ISpecification.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Repository\\ISpecification.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Repository\\ISpecification.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAAwCsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:27:31.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ISpecificationFactory.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Repository\\ISpecificationFactory.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Repository\\ISpecificationFactory.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Repository\\ISpecificationFactory.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Repository\\ISpecificationFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:27:53.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseSpecification.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\BaseSpecification.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\Repositories\\BaseSpecification.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\BaseSpecification.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\Repositories\\BaseSpecification.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:18:38.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\Repositories\\Repository.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\Repositories\\Repository.cs",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAkwHYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:19:01.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpecificationBuilder.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\SpecificationBuilder.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\Repositories\\SpecificationBuilder.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\SpecificationBuilder.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\Repositories\\SpecificationBuilder.cs",
+              "ViewState": "AQIAANwAAAAAAAAAAAA7wBMBAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:19:32.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SpecificationEvaluator.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\SpecificationEvaluator.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\Repositories\\SpecificationEvaluator.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\SpecificationEvaluator.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\Repositories\\SpecificationEvaluator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:19:59.914Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SpecificationFactory.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\SpecificationFactory.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\Repositories\\SpecificationFactory.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\Repositories\\SpecificationFactory.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\Repositories\\SpecificationFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:20:15.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HandleSendEmail.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleEmail\\HandleSendEmail.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\HandleEmail\\HandleSendEmail.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleEmail\\HandleSendEmail.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\HandleEmail\\HandleSendEmail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:03:30.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "KhachHang.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\KhachHang.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\KhachHang.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\KhachHang.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\KhachHang.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:43:34.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ThietBiSuaChua.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ThietBiSuaChua.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\ThietBiSuaChua.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ThietBiSuaChua.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\ThietBiSuaChua.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:44:34.81Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ThietBi.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ThietBi.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\ThietBi.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ThietBi.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\ThietBi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T12:38:46.546Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\Role.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\Role.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\Role.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\Role.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:47:27.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\RefreshToken.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\RefreshToken.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\RefreshToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:47:53.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "PhanCongCongViec.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\PhanCongCongViec.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\PhanCongCongViec.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\PhanCongCongViec.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\PhanCongCongViec.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:49:45.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LoaiThietBi.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LoaiThietBi.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\LoaiThietBi.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LoaiThietBi.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\LoaiThietBi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:43:56.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LinhKienSuaChuaThietBi.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LinhKienSuaChuaThietBi.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\LinhKienSuaChuaThietBi.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LinhKienSuaChuaThietBi.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\LinhKienSuaChuaThietBi.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T10:23:06.179Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "LichSuTichDiem.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LichSuTichDiem.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\LichSuTichDiem.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LichSuTichDiem.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\LichSuTichDiem.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:45:06.736Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "LichSuSuaChua.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LichSuSuaChua.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\LichSuSuaChua.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LichSuSuaChua.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\LichSuSuaChua.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:46:37.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "LichSuChat.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LichSuChat.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\LichSuChat.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\LichSuChat.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\LichSuChat.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:54:00.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HoaDon.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\HoaDon.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\HoaDon.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\HoaDon.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\HoaDon.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:45:26.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "HieuSuatNhanVien.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\HieuSuatNhanVien.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\HieuSuatNhanVien.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\HieuSuatNhanVien.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\HieuSuatNhanVien.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:50:43.259Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "HangTonKho.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\HangTonKho.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\HangTonKho.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\HangTonKho.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\HangTonKho.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:52:08.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "FAQ.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\FAQ.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\FAQ.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\FAQ.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\FAQ.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:53:39.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "DatLichSuaChua.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\DatLichSuaChua.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\DatLichSuaChua.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\DatLichSuaChua.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\DatLichSuaChua.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:54:26.313Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "DanhGiaDichVu.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\DanhGiaDichVu.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\DanhGiaDichVu.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\DanhGiaDichVu.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\DanhGiaDichVu.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:55:12.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ConfirmEmail.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ConfirmEmail.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\ConfirmEmail.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ConfirmEmail.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\ConfirmEmail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:48:36.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ChiTietHoaDon.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ChiTietHoaDon.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\ChiTietHoaDon.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ChiTietHoaDon.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\ChiTietHoaDon.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:45:45.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ChiPhiPhatSinh.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ChiPhiPhatSinh.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\ChiPhiPhatSinh.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\ChiPhiPhatSinh.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\ChiPhiPhatSinh.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:51:06.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "BaoHanh.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\BaoHanh.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\Entities\\BaoHanh.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\Entities\\BaoHanh.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\Entities\\BaoHanh.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T11:54:50.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Enumerate.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Enums\\Enumerate.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Enums\\Enumerate.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Enums\\Enumerate.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Enums\\Enumerate.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAiwDoAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:10:47.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "DataResponseMessage.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Payloads\\Responses\\Email\\DataResponseMessage.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Payloads\\Responses\\Email\\DataResponseMessage.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Payloads\\Responses\\Email\\DataResponseMessage.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Payloads\\Responses\\Email\\DataResponseMessage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAB1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:28:18.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Request_Message.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Email\\Request_Message.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Handle\\Email\\Request_Message.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Email\\Request_Message.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Handle\\Email\\Request_Message.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:26:15.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Email\\IEmailService.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Handle\\Email\\IEmailService.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Email\\IEmailService.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Handle\\Email\\IEmailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:26:02.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Email\\EmailService.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Handle\\Email\\EmailService.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Email\\EmailService.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Handle\\Email\\EmailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:25:46.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "HandleCheckImage.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Media\\HandleCheckImage.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Handle\\Media\\HandleCheckImage.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Media\\HandleCheckImage.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Handle\\Media\\HandleCheckImage.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:24:39.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "HandleUploadImage.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Media\\HandleUploadImage.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Handle\\Media\\HandleUploadImage.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Handle\\Media\\HandleUploadImage.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Handle\\Media\\HandleUploadImage.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAcwCcAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:24:25.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "GuardExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Guard\\GuardExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Guard\\GuardExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Guard\\GuardExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Guard\\GuardExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:23:32.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Guard.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Guard\\Guard.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Guard\\Guard.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Guard\\Guard.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Guard\\Guard.cs",
+              "ViewState": "AQIAALUAAAAAAAAAAAA6wNEAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:23:14.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Error.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Guard\\Error.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Application\\Guard\\Error.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Application\\Guard\\Error.cs",
+              "RelativeToolTip": "RepairManagement.Application\\Guard\\Error.cs",
+              "ViewState": "AQIAAFEAAAAAAAAAAADwv20AAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:22:54.704Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\UnitOfWorks\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\UnitOfWorks\\UnitOfWork.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\UnitOfWorks\\UnitOfWork.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\UnitOfWorks\\UnitOfWork.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAYwD0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:21:04.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "IDbContext.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\DataAccess\\IDbContext.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Infrastructure\\DataAccess\\IDbContext.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Infrastructure\\DataAccess\\IDbContext.cs",
+              "RelativeToolTip": "RepairManagement.Infrastructure\\DataAccess\\IDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T09:17:17.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\UnitOfWorks\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Domain\\UnitOfWorks\\IUnitOfWork.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Domain\\UnitOfWorks\\IUnitOfWork.cs",
+              "RelativeToolTip": "RepairManagement.Domain\\UnitOfWorks\\IUnitOfWork.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:28:31.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Utilities.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\UltilitiesGlobal\\Utilities.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\UltilitiesGlobal\\Utilities.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\UltilitiesGlobal\\Utilities.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\UltilitiesGlobal\\Utilities.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAA1wBwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:25:11.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "PathHelper.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Helpers\\PathHelper.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Helpers\\PathHelper.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Helpers\\PathHelper.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Helpers\\PathHelper.cs",
+              "ViewState": "AQIAAK4AAAAAAAAAAAAYwLYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:24:34.121Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "CommonHelper.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Helpers\\CommonHelper.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Helpers\\CommonHelper.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Helpers\\CommonHelper.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Helpers\\CommonHelper.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAYwGoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:23:59.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "VNPayLibrary.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleVnPay\\VNPayLibrary.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\HandleVnPay\\VNPayLibrary.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleVnPay\\VNPayLibrary.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\HandleVnPay\\VNPayLibrary.cs",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAAwIwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T12:22:48.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "DataVnpay.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleVnPay\\DataVnpay.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\HandleVnPay\\DataVnpay.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleVnPay\\DataVnpay.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\HandleVnPay\\DataVnpay.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:06:34.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Pagination.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandlePagination\\Pagination.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\HandlePagination\\Pagination.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandlePagination\\Pagination.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\HandlePagination\\Pagination.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAwA4AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:05:12.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "PagedResult.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandlePagination\\PagedResult.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\HandlePagination\\PagedResult.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandlePagination\\PagedResult.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\HandlePagination\\PagedResult.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAYwFoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:04:42.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "EmailTo.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleEmail\\EmailTo.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\HandleEmail\\EmailTo.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\HandleEmail\\EmailTo.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\HandleEmail\\EmailTo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:03:03.588Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "IHasModificationTime.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IHasModificationTime.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Features\\IHasModificationTime.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IHasModificationTime.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Features\\IHasModificationTime.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:02:03.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "IHasCreationTime.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IHasCreationTime.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Features\\IHasCreationTime.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IHasCreationTime.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Features\\IHasCreationTime.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:01:38.345Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "IDeletable.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IDeletable.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Features\\IDeletable.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IDeletable.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Features\\IDeletable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:01:13.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "ICloneable.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\ICloneable.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Features\\ICloneable.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\ICloneable.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Features\\ICloneable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:00:49.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "IActivatable.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IActivatable.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Features\\IActivatable.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Features\\IActivatable.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Features\\IActivatable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:00:16.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "StringExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\StringExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\StringExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\StringExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\StringExtensions.cs",
+              "ViewState": "AQIAAIMAAAAAAAAAAAAYwJ0AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:22:27.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "QueryString.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\QueryString.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\QueryString.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\QueryString.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\QueryString.cs",
+              "ViewState": "AQIAAIwAAAAAAAAAAAA1wKYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:20:47.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "QueryableExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\QueryableExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\QueryableExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\QueryableExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\QueryableExtensions.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAYwCgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:20:17.046Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "ConversionExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\ConversionExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\ConversionExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\ConversionExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\ConversionExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAHYAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:16:25.892Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "CollectionExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\CollectionExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\CollectionExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\CollectionExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\CollectionExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:15:50.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "DateTimeExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\DateTimeExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\DateTimeExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\DateTimeExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\DateTimeExtensions.cs",
+              "ViewState": "AQIAALoAAAAAAAAAAAAmwMkAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:17:34.82Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "EnumerableExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\EnumerableExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\EnumerableExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\EnumerableExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\EnumerableExtensions.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAYwCoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:19:14.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "DictionaryExtensions.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\DictionaryExtensions.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Extensions\\DictionaryExtensions.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Extensions\\DictionaryExtensions.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Extensions\\DictionaryExtensions.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAYwH8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:18:25.809Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:12:57.487Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "InvalidException.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Exceptions\\InvalidException.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Exceptions\\InvalidException.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Exceptions\\InvalidException.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Exceptions\\InvalidException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:12:21.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "ExistException.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Exceptions\\ExistException.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Exceptions\\ExistException.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Exceptions\\ExistException.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Exceptions\\ExistException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:11:46.545Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Constant.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Constants\\Constant.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Constants\\Constant.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Constants\\Constant.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Constants\\Constant.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:09:31.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "EmailConfiguration.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Configuration\\EmailConfiguration.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Configuration\\EmailConfiguration.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Configuration\\EmailConfiguration.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Configuration\\EmailConfiguration.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:08:40.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Base\\IEntity.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Base\\IEntity.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Base\\IEntity.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Base\\IEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:07:59.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "IHasKey.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Base\\IHasKey.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Base\\IHasKey.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Base\\IHasKey.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Base\\IHasKey.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:07:33.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Base\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Commons\\Base\\BaseEntity.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Commons\\Base\\BaseEntity.cs",
+              "RelativeToolTip": "RepairManagement.Commons\\Base\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T03:06:08.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Api\\Program.cs",
+              "RelativeDocumentMoniker": "RepairManagement.Api\\Program.cs",
+              "ToolTip": "D:\\ProjectCSharp\\RepairManagement\\RepairManagement\\RepairManagement.Api\\Program.cs",
+              "RelativeToolTip": "RepairManagement.Api\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T17:53:25.036Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
