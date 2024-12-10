@@ -9,8 +9,8 @@ namespace RepairManagement.Domain.Entities
 {
     public class DanhGiaDichVu : BaseEntity<int>
     {
-        public int ThietBiId { get; set; }
-        public virtual ThietBi? ThietBi { get; set; }
+        public int DichVuId { get; set; }
+        public virtual DichVu? DichVu { get; set; }
         public int KhachHangId { get; set; }
         public virtual KhachHang? KhachHang { get; set; }
         public int DiemDichVu {  get; set; }

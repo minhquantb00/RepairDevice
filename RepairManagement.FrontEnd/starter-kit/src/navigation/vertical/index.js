@@ -18,5 +18,10 @@ export default [
     title: 'Linh kiện',
     to: { path: 'accessory'},
     icon: { icon: 'tabler-device-analytics' }
+  },
+  {
+    title: 'Thông tin đặt lịch',
+    to: { path: 'customer-booking'},
+    icon: { icon: 'tabler-device-analytics' }
   }
 ]

@@ -14,6 +14,7 @@ namespace RepairManagement.Domain.Entities
         public double GiaNhap { get; set; }
         public double GiaBan { get; set; }
         public string MoTa {  get; set; }
+        public string? ImageUrl { get; set; }
         public virtual ICollection<LinhKienSuaChuaThietBi>? LinhKienSuaChuaThietBis { get; set; }
         public virtual ICollection<HangTonKho>? HangTonKhos { get; set; }
         public virtual ICollection<XuatNhapKho>? XuatNhapKhos { get; set; }

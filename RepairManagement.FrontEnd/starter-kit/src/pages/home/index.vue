@@ -7,6 +7,7 @@ import "vue3-toastify/dist/index.css";
 import { VDataTableServer } from "vuetify/labs/VDataTable";
 import ServiceDevice from "@/views/pages/services/ServiceDevice.vue";
 import Booking from "@/views/pages/formBooking/Booking.vue";
+import {ServiceApi} from "@/apis/service/serviceApi"
 const totalInvoices = ref(0);
 const invoices = ref([]);
 const selectedRows = ref([]);
@@ -25,44 +26,7 @@ const listBanner = ref([
       "https://suachualaptop24h.com/images/slideshow/2024/04/24/compress2/dich-vu-sua-chua-laptop_1713929666.jpg.webp",
   },
 ]);
-const allServices = [
-  {
-    id: 1,
-    title: "Sửa màn hình laptop",
-    icon: "tabler-rocket",
-    avatarColor: "success",
-  },
-  {
-    id: 2,
-    title: "Dịch vụ sửa laptop",
-    icon: "tabler-box",
-    avatarColor: "info",
-  },
-  {
-    id: 3,
-    title: "Bảo hành thiết bị",
-    icon: "tabler-users",
-    avatarColor: "primary",
-  },
-  {
-    id: 4,
-    title: "Thay linh kiện PC",
-    icon: "tabler-message",
-    avatarColor: "warning",
-  },
-  {
-    id: 5,
-    title: "Laptop repair service",
-    icon: "tabler-link",
-    avatarColor: "secondary",
-  },
-  {
-    id: 6,
-    title: "Mua bán thiết bị",
-    icon: "tabler-star",
-    avatarColor: "primary",
-  },
-];
+const allServices = ref([]);
 const instance = getCurrentInstance();
 const options = ref({
   page: 1,
@@ -91,11 +55,19 @@ const formatDate = (dateString) => {
   return `${year}-${month}-${day}`;
 };
 
+const getAllServices = async () => {
+  const result = await ServiceApi.getAllServices();
+  console.log(result);
+  allServices.value = result.data;
+}
+
 const refreshData = async () => {};
 
 watchEffect(async () => {});
 
-onMounted(async () => {});
+onMounted(async () => {
+  await getAllServices();
+});
 </script>
 
 <template>

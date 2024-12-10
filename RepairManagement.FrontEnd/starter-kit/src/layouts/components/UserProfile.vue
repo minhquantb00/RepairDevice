@@ -1,5 +1,17 @@
 <script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
+import {useRouter} from "vue-router"
+
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+const logOut = () => {
+  localStorage.removeItem('accessToken');
+  localStorage.removeItem('refreshToken');
+  localStorage.removeItem('userInfo')
+  router.push({
+    path: '/login'
+  })
+}
 </script>
 
 <template>
@@ -111,7 +123,7 @@ import avatar1 from '@images/avatars/avatar-1.png'
           <VDivider class="my-2" />
 
           <!-- 👉 Logout -->
-          <VListItem to="/login">
+          <VListItem @click="logOut">
             <template #prepend>
               <VIcon
                 class="me-2"
@@ -120,7 +132,7 @@ import avatar1 from '@images/avatars/avatar-1.png'
               />
             </template>
 
-            <VListItemTitle>Logout</VListItemTitle>
+            <VListItemTitle >Logout</VListItemTitle>
           </VListItem>
         </VList>
       </VMenu>

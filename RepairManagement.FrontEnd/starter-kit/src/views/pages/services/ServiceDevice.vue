@@ -26,14 +26,14 @@ const props = defineProps({
           <VCard>
             <template #title>
               <span class="text-h5">
-                {{ article.title }}
+                {{ article.tenDichVu }}
               </span>
             </template>
             <template #prepend>
               <VAvatar
-                :icon="article.icon"
+                icon="tabler-rocket"
                 rounded
-                :color="article.avatarColor"
+                color="success"
                 variant="tonal"
               />
             </template>

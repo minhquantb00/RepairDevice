@@ -13,10 +13,10 @@ namespace RepairManagement.Domain.Entities
         public string HoVaTen { get; set; }
         public string SoDienThoai { get; set; }
         public string Email { get; set; }
-        public string DiaChi { get; set; }
+        public string? DiaChi { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime? UpdateTime { get; set; }
-        public int NguoiDungId { get; set; }
+        public int? NguoiDungId { get; set; }
         public virtual NguoiDung? NguoiDung { get; set; }
         public int Diem { get; set; } = 0;
         public bool IsActive { get; set; } = true;

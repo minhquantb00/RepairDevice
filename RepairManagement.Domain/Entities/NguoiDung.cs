@@ -14,6 +14,7 @@ namespace RepairManagement.Domain.Entities
         public string HoVaTen {  get; set; }
         public string MatKhau { get; set; }
         public string SoDienThoai { get; set; }
+        public string? DiaChi { get; set; }
         public bool IsActive { get; set; } = true;
         public DateTime CreateTime { get; set; }
         public DateTime? UpdateTime { get; set; }

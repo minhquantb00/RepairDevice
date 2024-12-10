@@ -14,11 +14,12 @@ import authV2MaskLight from "@images/pages/misc-mask-light.png";
 import { VNodeRenderer } from "@layouts/components/VNodeRenderer";
 import { themeConfig } from "@themeConfig";
 import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, RouterLink } from "vue-router";
 import { useToast } from "vue-toast-notification";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 import { VForm } from "vuetify/components/VForm";
+import {AuthApi} from "@/apis/auth/authApi"
 
 const router = useRouter();
 const time = ref();
@@ -35,13 +36,12 @@ const refVForm = ref();
 const rememberMe = ref(false);
 const loading = ref(false);
 const disabled = ref(false);
-const $toast = useToast();
 const businessExecute = ref(loginRequest);
 
 const login = async () => {
   loading.value = true;
   console.log(businessExecute.value);
-  const result = await AuthService.login(businessExecute.value);
+  const result = await AuthApi.login(businessExecute.value);
   console.log(result);
   const decode = parseJwt(result.data.accessToken);
   if (rememberMe) {
@@ -132,13 +132,13 @@ const onSubmitForm = () => {
           <VNodeRenderer :nodes="themeConfig.app.logo" class="mb-6" />
 
           <h5 class="text-h5 mb-1">
-            Welcome to
+            Chào mứng đến với
             <span class="text-capitalize"> {{ themeConfig.app.title }} </span>!
             👋🏻
           </h5>
 
           <p class="mb-0">
-            Please sign-in to your account and start the adventure
+            Vui lòng đăng nhập để trải nghiệm dịch vụ của chúng tôi
           </p>
         </VCardText>
 
@@ -162,8 +162,8 @@ const onSubmitForm = () => {
               <!-- email -->
               <VCol cols="12">
                 <AppTextField
-                  v-model="businessExecute.userName"
-                  label="Username"
+                  v-model="businessExecute.email"
+                  label="Email"
                   type="text"
                   autofocus
                   :loading="loading"
@@ -174,14 +174,14 @@ const onSubmitForm = () => {
               <!-- password -->
               <VCol cols="12">
                 <AppTextField
-                  v-model="businessExecute.password"
-                  label="Password"
+                  v-model="businessExecute.matKhau"
+                  label="Mật khẩu"
                   :loading="loading"
                   :type="isPasswordVisible ? 'text' : 'password'"
                   :append-inner-icon="
                     isPasswordVisible ? 'tabler-eye-off' : 'tabler-eye'
                   "
-                  :rules="[requiredValidator, passwordValidator]"
+                  :rules="[requiredValidator]"
                   @click:append-inner="isPasswordVisible = !isPasswordVisible"
                 />
 
@@ -193,9 +193,9 @@ const onSubmitForm = () => {
                     :loading="loading"
                     label="Remember me"
                   />
-                  <a class="text-primary ms-2 mb-1" href="#">
-                    Forgot Password?
-                  </a>
+                  <RouterLink :to="{path: '/forgot-password'}" class="text-primary ms-2 mb-1" href="#">
+                    Quên mật khẩu?
+                  </RouterLink>
                 </div>
 
                 <VBtn
@@ -204,20 +204,19 @@ const onSubmitForm = () => {
                   :loading="loading"
                   :disabled="disabled"
                 >
-                  Login
+                  Đăng nhập
                 </VBtn>
               </VCol>
 
               <!-- create account -->
               <VCol cols="12" class="text-center">
-                <span>New on our platform?</span>
-                <RouterLink class="text-primary ms-2" href="#" :to="{name: 'register'}"> Create an account </RouterLink>
+                <RouterLink class="text-primary ms-2" href="#" :to="{name: 'register'}"> Đăng ký </RouterLink>
               </VCol>
 
               <VCol cols="12" class="d-flex align-center">
                 <VDivider />
 
-                <span class="mx-4">or</span>
+                <span class="mx-4">hoặc</span>
 
                 <VDivider />
               </VCol>

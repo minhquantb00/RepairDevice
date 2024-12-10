@@ -11,6 +11,7 @@ namespace RepairManagement.Domain.Entities
     public class ThietBi : BaseEntity<int>
     {
         public string TenThietBi {  get; set; }
+        public string? ImageUrl { get; set; }
         public int LoaiThietBiId { get; set; }
         public virtual LoaiThietBi? LoaiThietBi { get; set; }
         public int? KhachHangId { get; set; }

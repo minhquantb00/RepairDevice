@@ -1,4 +1,4 @@
 export const loginRequest = {
-  userName: '',
-  password: ''
+  email: '',
+  matKhau: ''
 }

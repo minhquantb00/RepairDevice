@@ -21,10 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\RepairManagement.Application\RepairManagement.Application.csproj" />
     <ProjectReference Include="..\RepairManagement.Commons\RepairManagement.Commons.csproj" />
     <ProjectReference Include="..\RepairManagement.Domain\RepairManagement.Domain.csproj" />
     <ProjectReference Include="..\RepairManagement.Infrastructure\RepairManagement.Infrastructure.csproj" />

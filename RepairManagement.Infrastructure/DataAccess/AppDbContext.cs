@@ -41,7 +41,7 @@ namespace RepairManagement.Infrastructure.DataAccess
         public DbSet<ThongBao> ThongBaos { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<XuatNhapKho> XuatNhapKhos { get; set; }
-        
+        public DbSet<DichVu> DichVus { get; set; }
 
         public async Task<int> CommitChangesAsync()
         {

@@ -28,9 +28,4 @@
     <ProjectReference Include="..\RepairManagement.Domain\RepairManagement.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Payloads\Converters\" />
-    <Folder Include="Payloads\Requests\" />
-  </ItemGroup>
-
 </Project>

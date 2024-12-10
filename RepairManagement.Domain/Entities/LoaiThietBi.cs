@@ -10,6 +10,7 @@ namespace RepairManagement.Domain.Entities
     public class LoaiThietBi : BaseEntity<int>
     {
         public string Name { get; set; }
+        public string? ImageUrl { get; set; }
         public virtual ICollection<ThietBi>? ThietBis {  get; set; } 
     }
 }
