@@ -62,6 +62,8 @@ builder.Services.AddScoped<KhachHangConverter>();
 builder.Services.AddScoped<DanhGiaDichVuConverter>();
 builder.Services.AddScoped<DichVuConverter>();
 builder.Services.AddScoped<DatLichConverter>();
+builder.Services.AddScoped<LoaiThietBiConverter>();
+builder.Services.AddScoped<ThietBiConverter>();
 
 
 
@@ -74,11 +76,15 @@ builder.Services.AddScoped<IRepository<ConfirmEmail>, Repository<ConfirmEmail>>(
 builder.Services.AddScoped<IRepository<DichVu>, Repository<DichVu>>();
 builder.Services.AddScoped<IRepository<DanhGiaDichVu>, Repository<DanhGiaDichVu>>();
 builder.Services.AddScoped<IRepository<DatLichSuaChua>, Repository<DatLichSuaChua>>();
+builder.Services.AddScoped<IRepository<ThietBi>,  Repository<ThietBi>>();
+builder.Services.AddScoped<IRepository<LoaiThietBi>, Repository<LoaiThietBi>>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IDichVuService, DichVuService>();
 builder.Services.AddScoped<IDatLichService, DatLichService>();
+builder.Services.AddScoped<IThietBiService, ThietBiService>();
+builder.Services.AddScoped<ILoaiThietBiService, LoaiThietBiService>();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();

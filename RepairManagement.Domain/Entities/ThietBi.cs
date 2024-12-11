@@ -16,6 +16,7 @@ namespace RepairManagement.Domain.Entities
         public virtual LoaiThietBi? LoaiThietBi { get; set; }
         public int? KhachHangId { get; set; }
         public virtual KhachHang? KhachHang { get; set; }
+        public double? Gia {  get; set; }
         public string MoTa {  get; set; }
         public Enumerate.TrangThaiThietBi? Status { get; set; }
         public virtual ICollection<BaoHanh>? BaoHanhs { get; set; }

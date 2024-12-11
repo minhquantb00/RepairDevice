@@ -31,7 +31,7 @@ namespace RepairManagement.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetServiceById(int id)
+        public async Task<IActionResult> GetServiceById([FromRoute]int id)
         {
             return Ok(await _service.GetServiceById(id));
         }

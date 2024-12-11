@@ -56,14 +56,6 @@ const customizedCalendarOptions = ref({
   ...calendarOptions,
   dayCellDidMount: (info) => {
     const formattedDate = info.date.toISOString().split('T')[0];
-    bookedDates.value.forEach(element => {
-      if(element !== formattedDate){
-        console.log('cua mang: ', element);
-        console.log('cua ngay mac dinh: ', formattedDate)
-        info.el.style.fontWeight = 'bold';
-      info.el.style.backgroundColor = '#e0f7fa';
-      }
-    });
 
     if (bookedDates.value.includes(formattedDate)) {
       info.el.style.fontWeight = 'bold';

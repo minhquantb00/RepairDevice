@@ -4,55 +4,20 @@ import { onMounted } from "vue";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 import { VDataTableServer } from "vuetify/labs/VDataTable";
+import { DeviceApi } from "@/apis/device/deviceApi";
 
 const totalInvoices = ref(0);
 const invoices = ref([]);
 const selectedRows = ref([]);
 const isLoading = ref(false);
 const currentPage = ref(1);
-const products = ref([
-  {
-    id: 1,
-    imageUrl: "https://hethong.24hlaptop.com/image_product/bo-ve-sinh-1706526195942.png",
-    name: "Bộ vệ sinh laptop Melon (4PC)",
-    price: "49.000₫",
-  },
-  {
-    id: 2,
-    imageUrl:
-      "https://hethong.24hlaptop.com/image_product/1t-2_7ffbe1ffb8ea4f91944cc6a19c908013_master-1727773341680.webp",
-    name: "Ổ cứng SSD Kingston 1TB M2 2280 NVME PCIE NV3",
-    price: "1.890.000₫",
-  },
-  {
-    id: 3,
-    imageUrl:
-      "https://hethong.24hlaptop.com/image_product/919d5259d3bfda576a83e9bc791056fb1-1645768714551-1-1645769083707-1-1645769149623-1-1645769318522-.jpg",
-    name: "Ram laptop Samsung 8GB DDR3L 1600",
-    price: "400.000₫",
-  },
-  {
-    id: 4,
-    imageUrl:
-      "https://hethong.24hlaptop.com/image_product/PIN-LAPTOP-SURFACE-BOOK1-1634644714407-.jpg",
-    name: "Pin dùng cho laptop Surface Book 1 (G3HTA020H)",
-    price: "1.500.000₫",
-  },
-  {
-    id: 5,
-    imageUrl:
-      "https://hethong.24hlaptop.com/image_product/kaspersky-internetsecurity-5pc_1633052976-1656928563535.jpg",
-    name: "Phần mềm diệt virus Kaspersky Internet Security",
-    price: "300.000₫",
-  },
-  {
-    id: 6,
-    imageUrl:
-      "https://hethong.24hlaptop.com/image_product/SAC-LAPTOP-DELL-19.5V-%204.62A-11-1634826991630-.jpg",
-    name: "Sạc dùng cho laptop Dell 19.5V - 4.62A chân kim to",
-    price: "250.000₫",
-  },
-]);
+const listDeviceTypes = ref([]);
+const businessExecute = ref({
+  tenThietBi: '',
+  loaiThietBiId: null
+})
+
+const products = ref([]);
 const listBanner = ref([
   {
     id: 1,
@@ -65,6 +30,16 @@ const listBanner = ref([
       "https://suachualaptop24h.com/images/slideshow/2024/04/24/compress2/dich-vu-sua-chua-laptop_1713929666.jpg.webp",
   },
 ]);
+
+const getAllDeviceTypes = async () => {
+  const result = await DeviceApi.getAllLoaiThietBis();
+  listDeviceTypes.value = result.data;
+};
+
+const getallDevices = async () => {
+  const result = await DeviceApi.getAllThietBis(businessExecute.value);
+  products.value = result.data
+}
 const instance = getCurrentInstance();
 const options = ref({
   page: 1,
@@ -92,7 +67,10 @@ const formatDate = (dateString) => {
 };
 watchEffect(async () => {});
 
-onMounted(async () => {});
+onMounted(async () => {
+  await getAllDeviceTypes();
+  await getallDevices();
+});
 </script>
 
 <template>
@@ -111,293 +89,22 @@ onMounted(async () => {});
     </VCard>
     <VCard class="product-list-home category__trend mb-4" id="">
       <div class="category__trend-header">
-        <h2>Danh mục sản phẩm</h2>
+        <h2>Danh mục thiết bị</h2>
       </div>
-
       <div class="catalog__list">
         <a
           class="catalog__item"
+          v-for="item in listDeviceTypes"
+          :key="item.id"
           href="https://linhkienlaptop24h.com/danh-muc/disk-o-cung"
         >
           <img
-            src="https://hethong.24hlaptop.com/image_menu_website/o-cung-1649472741655.jpg"
+            :src="item.imageUrl"
             alt="img category"
             class="catalog__item-img"
             loading="lazy"
           />
-          <p class="catalog__item-text">Disk - Ổ cứng</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/man-hinh">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/man-hinh-laptop-1649472448268.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">LCD - Màn hình</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/pin-laptop">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/pin-laptop-1649472476770.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Battery - Pin laptop</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/vo">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/vo-laptop-1664423002648.png"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Vỏ laptop</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/cap">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/cap-man-hinh-1661157942007.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Cáp màn hình laptop</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/fan-laptop-quat-tan-nhiet"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/quat-tan-nhiet-laptop-1649472512289.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Quạt tản nhiệt</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/linh-kien-laptop-mobile-tablet"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/63(4)-02-1653451591159.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Linh kiện</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/chuot">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/chuot-1651825322388.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Chuột</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/pin-dien-thoai"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/pin đt-1662953970235.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Pin điện thoại</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/man-hinh-dien-thoai"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/màn hình đt-1662954276806.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Màn hình điện thoại</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/mainboard-dien-thoai"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/mainbroad điện thoại-1662953676067.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Mainboard điện thoại</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/ram">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/ram-laptop-1649472760305.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">RAM - Bộ nhớ trong</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/keyboard-laptop"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/ban-phim-laptop-1649472955716.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Keyboard - Laptop</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/adapter-sac-laptop"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/sac-laptop-1649472773766.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Adapter - Sạc laptop</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/loa-laptop">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/Loa-laptop-1661157314584.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Loa laptop</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/ban-le">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/ban-le-laptop-1661158158767.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Bản lề Laptop</p>
-        </a>
-
-        <a class="catalog__item" href="https://linhkienlaptop24h.com/danh-muc/phan-mem">
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/software-1656935323193.png"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Phần mềm bản quyền</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/phu-kien-laptop-tablet-mobile"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/phu-kien-1651825202526.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Phụ kiện</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/pin-surface"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/pin-suface-1653477059417.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Pin Surface</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/pin-macbook"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/pin-macbook-1653476980185.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Pin Macbook</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/man-hinh-macbook"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/man-hinh-macbook-1666085821462.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Màn hình MacBook</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/o-cung-macbook"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/2-03-1684898903110.png"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Ổ cứng Macbook</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/pin-may-tinh-bang"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/pin mt bảng-1662955063272.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Pin máy tính bảng</p>
-        </a>
-
-        <a
-          class="catalog__item"
-          href="https://linhkienlaptop24h.com/danh-muc/man-hinh-may-tinh-bang"
-        >
-          <img
-            src="https://hethong.24hlaptop.com/image_menu_website/màn hình mt bảng-1662955197079.jpg"
-            alt="img category"
-            class="catalog__item-img"
-            loading="lazy"
-          />
-          <p class="catalog__item-text">Màn hình máy tính bảng</p>
+          <p class="catalog__item-text">{{ item.name }}</p>
         </a>
       </div>
     </VCard>
@@ -427,15 +134,15 @@ onMounted(async () => {});
                 </div>
 
                 <span class="irt-price">
-                  <span class="price-border">{{ item.price }}</span>
-                  <span class="price-shadow">{{ item.price }}</span>
+                  <span class="price-border">{{ item.gia }}</span>
+                  <span class="price-shadow">{{ item.gia }}</span>
                 </span>
 
                 <div
                   href="https://linhkienlaptop24h.com/san-pham/bo-ve-sinh-laptop-melon"
                   class="irt-name"
                 >
-                  {{ item.name }}
+                  {{ item.tenThietBi }}
                 </div>
               </a>
             </div>
