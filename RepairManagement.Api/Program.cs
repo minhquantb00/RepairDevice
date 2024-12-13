@@ -85,6 +85,7 @@ builder.Services.AddScoped<IDichVuService, DichVuService>();
 builder.Services.AddScoped<IDatLichService, DatLichService>();
 builder.Services.AddScoped<IThietBiService, ThietBiService>();
 builder.Services.AddScoped<ILoaiThietBiService, LoaiThietBiService>();
+builder.Services.AddScoped<IKhachHangService, KhachHangService>();
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();

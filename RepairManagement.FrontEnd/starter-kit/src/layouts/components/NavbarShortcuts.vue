@@ -1,4 +1,5 @@
 <script setup>
+import {RouterLink} from "vue-router"
 const shortcuts = [
   {
     icon: "tabler-calendar",
@@ -43,7 +44,7 @@ const shortcuts = [
 </script>
 
 <template>
-  <div class="d-flex" style="align-items:center">
+  <RouterLink :to="{path: '/booking'}" class="d-flex" style="align-items:center">
     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 33">
       <g fill="none">
         <path
@@ -65,5 +66,5 @@ const shortcuts = [
     <div style="margin-left: 8px">
       <div>Đặt lịch</div>
     </div>
-  </div>
+  </RouterLink>
 </template>
