@@ -18,13 +18,9 @@ const datLichSuaChua = async (params) => {
   }
 };
 
-const getAllBookings = async () => {
+const getAllBookings = async (khachHangId) => {
   try{
-    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllBookings`, {
-      headers: {
-        Authorization: `Bearer ${authorization}`,
-      }
-    });
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllBookings?khachHangId=${khachHangId}`);
     return result;
   }catch (error) {
     throw error;

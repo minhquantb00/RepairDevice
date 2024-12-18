@@ -64,8 +64,13 @@ builder.Services.AddScoped<DichVuConverter>();
 builder.Services.AddScoped<DatLichConverter>();
 builder.Services.AddScoped<LoaiThietBiConverter>();
 builder.Services.AddScoped<ThietBiConverter>();
-
-
+builder.Services.AddScoped<LichSuSuaChuaConverter>();
+builder.Services.AddScoped<ThietBiSuaChuaConverter>();
+builder.Services.AddScoped<LichSuTichDiemConverter>();
+builder.Services.AddScoped<LinhKienConverter>();
+builder.Services.AddScoped<LinhKienSuaChuaConverter>();
+builder.Services.AddScoped<PhanCongCongViecConverter>();
+builder.Services.AddScoped<XuatNhapKhoConverter>();
 
 builder.Services.AddScoped<IRepository<KhachHang>, Repository<KhachHang>>();
 builder.Services.AddScoped<IRepository<RefreshToken>, Repository<RefreshToken>>();
@@ -78,6 +83,14 @@ builder.Services.AddScoped<IRepository<DanhGiaDichVu>, Repository<DanhGiaDichVu>
 builder.Services.AddScoped<IRepository<DatLichSuaChua>, Repository<DatLichSuaChua>>();
 builder.Services.AddScoped<IRepository<ThietBi>,  Repository<ThietBi>>();
 builder.Services.AddScoped<IRepository<LoaiThietBi>, Repository<LoaiThietBi>>();
+builder.Services.AddScoped<IRepository<ThietBiSuaChua>, Repository<ThietBiSuaChua>>();
+builder.Services.AddScoped<IRepository<LichSuTichDiem>, Repository<LichSuTichDiem>>();
+builder.Services.AddScoped<IRepository<LichSuSuaChua>, Repository<LichSuSuaChua>>();
+builder.Services.AddScoped<IRepository<LinhKien>, Repository<LinhKien>>();
+builder.Services.AddScoped<IRepository<LinhKienSuaChuaThietBi>, Repository<LinhKienSuaChuaThietBi>>();
+builder.Services.AddScoped<IRepository<PhanCongCongViec>, Repository<PhanCongCongViec>>();
+builder.Services.AddScoped<IRepository<HangTonKho>, Repository<HangTonKho>>();
+builder.Services.AddScoped<IRepository<XuatNhapKho>, Repository<XuatNhapKho>>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IEmailService, EmailService>();

@@ -15,7 +15,7 @@ export default [
     icon: { icon: 'tabler-brand-azure' },
   },
   {
-    title: 'Linh kiện',
+    title: 'Thiết bị',
     to: { path: 'accessory'},
     icon: { icon: 'tabler-device-analytics' }
   },

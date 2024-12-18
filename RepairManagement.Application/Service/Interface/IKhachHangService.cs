@@ -16,5 +16,6 @@ namespace RepairManagement.Application.Service.Interface
         Task<ResponseObject<DataResponseKhachHang>> DeleteKhachHang(int id);
         Task<IQueryable<DataResponseKhachHang>> GetAllKhachHang(FilterCustomer? filter);
         Task<DataResponseKhachHang> GetKhachHangById(int id);
+        Task<ResponseObject<DataResponseLichSuTichDiem>> CreateLichSuTichDiem(Request_CreateLichSuTichDiem request);
     }
 }

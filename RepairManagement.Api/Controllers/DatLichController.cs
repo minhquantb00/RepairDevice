@@ -25,10 +25,9 @@ namespace RepairManagement.Api.Controllers
             return Ok(await _datLichService.DatLichSuaChua(request));
         }
         [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> GetAllBookings()
+        public async Task<IActionResult> GetAllBookings(int khachHangId)
         {
-            return Ok(await _datLichService.GetAllBookings());
+            return Ok(await _datLichService.GetAllBookings(khachHangId));
         }
     }
 }

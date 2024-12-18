@@ -1,4 +1,5 @@
 <script setup>
+import { paginationMeta } from "@/@fake-db/utils";
 import avatar1 from "@images/avatars/avatar-1.png";
 import avatar2 from "@images/avatars/avatar-2.png";
 import avatar3 from "@images/avatars/avatar-3.png";
@@ -64,7 +65,7 @@ const paginatedData = computed(() => {
   return invoices.value.slice(start, end);
 });
 const totalPages = computed(() => {
-  const valueInvoice  = Number(invoices.value);
+  const valueInvoice  = Number(invoices.value.length);
   const valueItemPerPage = Number(options.value.itemsPerPage);
   return Math.ceil((valueInvoice * 1.0) / valueItemPerPage);
 });
@@ -80,24 +81,33 @@ onMounted(async () => {
     </div>
 
     <VRow>
-      <VCol cols="4" v-for="item in listDeviceType" :key="item.id">
-        <VCard>
-          <VImg :src="item.imageUrl" height="200px" width="100%" />
-
-
-          <VCardText class="position-relative">
-            <div class="d-flex justify-space-between flex-wrap pt-2">
-              <div class="me-2 mb-2">
-                <VCardTitle class="pa-0">
-                  {{item.name}}
-                </VCardTitle>
-              </div>
-            </div>
-          </VCardText>
-        </VCard>
+      <VCol cols="3" v-for="item in paginatedData" :key="item.id">
+        <VCard style="width: 100%">
+  <VImg
+    :src="item.imageUrl"
+    width="100%"
+    height="200px"
+    class="v-img--cover"
+  />
+  <VCardText class="position-relative">
+    <div class="d-flex justify-space-between flex-wrap pt-2">
+      <div class="me-2 mb-2 d-flex align-center justify-space-around">
+        <VCardTitle class="pa-0">
+          {{ item.name }}
+        </VCardTitle>
+        <IconBtn >
+            <VIcon icon="tabler-trash" />
+          </IconBtn>
+      </div>
+    </div>
+  </VCardText>
+</VCard>
       </VCol>
     </VRow>
     <div>
+    <p class="text-sm text-disabled mb-0">
+              {{ paginationMeta(options, totalInvoices) }}
+            </p>
       <VPagination
         class="mt-4"
         v-model="options.page"

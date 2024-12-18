@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepairManagement.Application.Payloads.Requests.Customer;
+using RepairManagement.Application.Payloads.ResponseDatas;
+using RepairManagement.Application.Payloads.Responses.User;
 using RepairManagement.Application.Service.Interface;
 using RepairManagement.Commons.Constants;
 
@@ -45,6 +47,12 @@ namespace RepairManagement.Api.Controllers
         public async Task<IActionResult> GetKhachHangById([FromRoute] int id)
         {
             return Ok(await _khachHangService.GetKhachHangById(id));
+        }
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> CreateLichSuTichDiem([FromForm] Request_CreateLichSuTichDiem request)
+        {
+            return Ok(await _khachHangService.CreateLichSuTichDiem(request));
         }
     }
 }

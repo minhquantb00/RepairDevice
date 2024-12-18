@@ -1,4 +1,5 @@
-﻿using RepairManagement.Domain.Entities;
+﻿using RepairManagement.Application.Payloads.Requests.Device;
+using RepairManagement.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace RepairManagement.Application.Payloads.Requests.Customer
         public string SoDienThoai { get; set; }
         public string Email { get; set; }
         public string? DiaChi { get; set; }
+        public List<Request_CreateThietBi>? Request_CreateThietBis { get; set; }
     }
 }

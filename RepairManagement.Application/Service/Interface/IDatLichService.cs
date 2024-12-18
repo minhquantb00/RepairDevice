@@ -12,6 +12,6 @@ namespace RepairManagement.Application.Service.Interface
     public interface IDatLichService
     {
         Task<ResponseObject<DataResponseDatLich>> DatLichSuaChua(Request_DatLichSuaChua request);
-        Task<IQueryable<DataResponseDatLich>> GetAllBookings();
+        Task<IQueryable<DataResponseDatLich>> GetAllBookings(int khachHangId);
     }
 }

@@ -44,7 +44,15 @@ namespace RepairManagement.Application.Service.Implement
                     SoDienThoai = request.SoDienThoai,
                 };
                 khachHang = await _khachHangRepository.CreateAsync(khachHang);
-
+                if(request.ThoiGianDat < DateTime.Now)
+                {
+                    return new ResponseObject<DataResponseDatLich>
+                    {
+                        Data = null,
+                        Message = "Bạn cần đặt lịch ít nhất là sau ngày hôm nay",
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                }
                 DatLichSuaChua item = new DatLichSuaChua
                 {
                     CreateTime = DateTime.Now,
@@ -76,6 +84,15 @@ namespace RepairManagement.Application.Service.Implement
                     Status = StatusCodes.Status404NotFound
                 };
             }
+            if (request.ThoiGianDat < DateTime.Now)
+            {
+                return new ResponseObject<DataResponseDatLich>
+                {
+                    Data = null,
+                    Message = "Bạn cần đặt lịch ít nhất là sau ngày hôm nay",
+                    Status = StatusCodes.Status400BadRequest
+                };
+            }
             DatLichSuaChua datLich = new DatLichSuaChua
             {
                 CreateTime = DateTime.Now,
@@ -98,15 +115,13 @@ namespace RepairManagement.Application.Service.Implement
             };
         }
 
-        public async Task<IQueryable<DataResponseDatLich>> GetAllBookings()
+        public async Task<IQueryable<DataResponseDatLich>> GetAllBookings(int khachHangId)
         {
-            var currentUser = _httpContextAccessor.HttpContext.User;
-            string userId = currentUser.FindFirst("Id").Value;
-            var khachHang = await _khachHangRepository.GetAsync(record => record.NguoiDungId == int.Parse(userId));
+            var khachHang = await _khachHangRepository.GetAsync(record => record.Id == khachHangId);
             if (khachHang == null) return null;
-            var query = await _datLichSuaChuaRepository.GetAllAsync(item => item.KhachHangId == khachHang.Id);
+            var query = await _datLichSuaChuaRepository.GetAllAsync(item => item.KhachHangId == khachHang.Id && item.ThoiGianDat >= DateTime.Now);
 
-            return query.Select(item => _datLichConverter.EntityToDTO(item));
+            return query.OrderByDescending(x => x.ThoiGianDat).Select(item => _datLichConverter.EntityToDTO(item));
         }
     }
 }

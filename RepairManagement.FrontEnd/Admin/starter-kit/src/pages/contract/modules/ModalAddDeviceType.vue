@@ -3,6 +3,7 @@ import { DeviceApi } from "@/apis/device/deviceApi";
 import { onMounted } from "vue";
 import { toast } from "vue3-toastify";
 import { VForm } from 'vuetify/components/VForm';
+import "vue3-toastify/dist/index.css";
 const props = defineProps({
   deviceTypeData: {
     type: Object,
@@ -17,6 +18,11 @@ const props = defineProps({
   },
 });
 const refVForm = ref()
+const listDeviceType = ref([]);
+const getAllDeviceType = async () => {
+  const result = await DeviceApi.getAllLoaiThietBis();
+  listDeviceType.value = result.data;
+}
 const loading = ref(false);
 const selectedFile = ref(null);
 const createDeviceType = ref({
@@ -74,6 +80,7 @@ const onClickButtonSubmit = async () => {
     });
     emit("update:isDialogVisible", false);
       emit("submit");
+    await getAllDeviceType();
     }
     else{
       loading.value = true

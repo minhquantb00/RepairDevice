@@ -55,7 +55,7 @@ const login = async () => {
     });
     disabled.value = true;
     time.value = setTimeout(() => {
-      router.push("/");
+      router.push("/customer");
     }, 2000);
   } else {
     toast(result.message, {

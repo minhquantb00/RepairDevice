@@ -13,5 +13,6 @@ namespace RepairManagement.Domain.Entities
         public virtual LinhKien? LinhKien { get; set; }
         public int ThietBiSuaChuaId { get; set; }
         public virtual ThietBiSuaChua? ThietBiSuaChua { get; set; }
+        public int? SoLuongDung { get; set; } = 0;
     }
 }

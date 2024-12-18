@@ -65,6 +65,10 @@ const formatDate = (dateString) => {
   const day = String(date.getDate()).padStart(2, "0");
   return `${year}-${month}-${day}`;
 };
+
+const  formatCurrencyVN = (amount)  =>{
+    return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+}
 watchEffect(async () => {});
 
 onMounted(async () => {
@@ -134,8 +138,8 @@ onMounted(async () => {
                 </div>
 
                 <span class="irt-price">
-                  <span class="price-border">{{ item.gia }}</span>
-                  <span class="price-shadow">{{ item.gia }}</span>
+                  <span class="price-border">{{ formatCurrencyVN(item.gia) }}</span>
+                  <span class="price-shadow">{{ formatCurrencyVN(item.gia) }}</span>
                 </span>
 
                 <div

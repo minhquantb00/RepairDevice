@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Asn1.Ocsp;
+using RepairManagement.Application.Handle.Media;
 using RepairManagement.Application.Payloads.Converters;
 using RepairManagement.Application.Payloads.Requests.Customer;
+using RepairManagement.Application.Payloads.Requests.Device;
 using RepairManagement.Application.Payloads.ResponseDatas;
 using RepairManagement.Application.Payloads.Responses.User;
 using RepairManagement.Application.Service.Interface;
+using RepairManagement.Commons.Extensions;
 using RepairManagement.Domain.Entities;
 using RepairManagement.Domain.Repository;
 using System;
@@ -21,11 +24,19 @@ namespace RepairManagement.Application.Service.Implement
         private readonly IRepository<KhachHang> _khachHangRepository;
         private readonly KhachHangConverter _khachHangConverter;
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public KhachHangService(IRepository<KhachHang> khachHangRepository, KhachHangConverter khachHangConverter, IHttpContextAccessor httpContextAccessor)
+        private readonly IRepository<ThietBi> _thietBiRepository;
+        private readonly IRepository<ThietBiSuaChua> _thietBiSuaChuaRepository;
+        private readonly IRepository<LichSuTichDiem> _lichSuTichDiemRepository;
+        private readonly LichSuTichDiemConverter _lichSuaChuaConverter;
+        public KhachHangService(IRepository<KhachHang> khachHangRepository, KhachHangConverter khachHangConverter, IHttpContextAccessor httpContextAccessor, IRepository<ThietBi> thietBiRepository, IRepository<ThietBiSuaChua> thietBiSuaChuaRepository, IRepository<LichSuTichDiem> lichSuTichDiemRepository, LichSuTichDiemConverter lichSuTichDiemConverter)
         {
             _httpContextAccessor = httpContextAccessor;
             _khachHangConverter = khachHangConverter;
             _khachHangRepository  = khachHangRepository;
+            _thietBiRepository = thietBiRepository;
+            _thietBiSuaChuaRepository = thietBiSuaChuaRepository;
+            _lichSuTichDiemRepository = lichSuTichDiemRepository;
+            _lichSuaChuaConverter = lichSuTichDiemConverter;
         }
         public async Task<ResponseObject<DataResponseKhachHang>> CreateKhachHang(Request_CreateKhachHang request)
         {
@@ -67,6 +78,56 @@ namespace RepairManagement.Application.Service.Implement
                 Status = StatusCodes.Status200OK
             };
         }
+
+        public async Task<ResponseObject<DataResponseLichSuTichDiem>> CreateLichSuTichDiem(Request_CreateLichSuTichDiem request)
+        {
+            var currentUser = _httpContextAccessor.HttpContext.User;
+            if (!currentUser.Identity.IsAuthenticated)
+            {
+                return new ResponseObject<DataResponseLichSuTichDiem>
+                {
+                    Data = null,
+                    Message = "Người dùng chưa được xác thực",
+                    Status = StatusCodes.Status401Unauthorized
+                };
+            }
+            if (!currentUser.IsInRole("Admin"))
+            {
+                return new ResponseObject<DataResponseLichSuTichDiem>
+                {
+                    Data = null,
+                    Message = "Bạn không có quyền thực hiện chức năng này",
+                    Status = StatusCodes.Status403Forbidden
+                };
+            }
+            var khachHang = await _khachHangRepository.GetByIdAsync(request.KhachHangId);
+            if(khachHang == null)
+            {
+                return new ResponseObject<DataResponseLichSuTichDiem>
+                {
+                    Data = null,
+                    Message = "Khách hàng không tồn tại",
+                    Status = StatusCodes.Status404NotFound
+                };
+            }
+            LichSuTichDiem lichSuTichDiem = new LichSuTichDiem
+            {
+                Action = request.Action,
+                CreateTime = DateTime.Now,
+                KhachHangId = khachHang.Id,
+                Point = 1,
+            };
+            lichSuTichDiem  = await _lichSuTichDiemRepository.CreateAsync(lichSuTichDiem);
+            khachHang.Diem = _lichSuTichDiemRepository.GetAllAsync(item => item.KhachHangId == khachHang.Id).Result.Sum(x => x.Point);
+            khachHang = await _khachHangRepository.UpdateAsync(khachHang);
+            return new ResponseObject<DataResponseLichSuTichDiem>
+            {
+                Data = null,
+                Message = "Tích điểm thành công",
+                Status = StatusCodes.Status200OK
+            };
+        }
+
 
         public async Task<ResponseObject<DataResponseKhachHang>> DeleteKhachHang(int id)
         {

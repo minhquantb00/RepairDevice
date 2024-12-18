@@ -555,6 +555,9 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<int>("LinhKienId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SoLuongDung")
+                        .HasColumnType("int");
+
                     b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");
 
@@ -647,7 +650,7 @@ namespace RepairManagement.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ThietBiId")
+                    b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ThoiGianHoanThanh")
@@ -660,7 +663,7 @@ namespace RepairManagement.Infrastructure.Migrations
 
                     b.HasIndex("NguoiDungId");
 
-                    b.HasIndex("ThietBiId");
+                    b.HasIndex("ThietBiSuaChuaId");
 
                     b.ToTable("PhanCongCongViecs");
                 });
@@ -1096,15 +1099,15 @@ namespace RepairManagement.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RepairManagement.Domain.Entities.ThietBi", "ThietBi")
+                    b.HasOne("RepairManagement.Domain.Entities.ThietBiSuaChua", "ThietBiSuaChua")
                         .WithMany("PhanCongCongViecs")
-                        .HasForeignKey("ThietBiId")
+                        .HasForeignKey("ThietBiSuaChuaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("NguoiDung");
 
-                    b.Navigation("ThietBi");
+                    b.Navigation("ThietBiSuaChua");
                 });
 
             modelBuilder.Entity("RepairManagement.Domain.Entities.RefreshToken", b =>
@@ -1282,14 +1285,14 @@ namespace RepairManagement.Infrastructure.Migrations
 
                     b.Navigation("LichSuSuaChuas");
 
-                    b.Navigation("PhanCongCongViecs");
-
                     b.Navigation("ThietBiSuaChuas");
                 });
 
             modelBuilder.Entity("RepairManagement.Domain.Entities.ThietBiSuaChua", b =>
                 {
                     b.Navigation("LinhKienSuaChuaThietBis");
+
+                    b.Navigation("PhanCongCongViecs");
                 });
 #pragma warning restore 612, 618
         }

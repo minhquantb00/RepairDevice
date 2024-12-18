@@ -15,3 +15,4 @@ namespace RepairManagement.Domain.Entities
         public DateTime ThoiGianKetThuc {  get; set; }
     }
 }
+ 

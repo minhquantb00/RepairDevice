@@ -1,7 +1,7 @@
 export default [
   {
     title: 'Quản lý khách hàng',
-    to: { path: 'department' },
+    to: { path: 'customer' },
     icon: { icon: 'tabler-brand-teams' },
   },
   {
@@ -9,15 +9,20 @@ export default [
     to: { path: 'contract'},
     icon: { icon: 'tabler-packages' }
   },
-  // {
-  //   title: 'Quản lý nhân viên',
-  //   to: { name: 'second-page' },
-  //   icon: { icon: 'tabler-packages' },
-  // },
-  // {
-  //   title: 'Quản lý loại hợp đồng',
-  //   to: { path: 'contractType' },
-  //   icon: { icon: 'tabler-packages' },
-  // },
+  {
+    title: 'Sửa chữa thiết bị',
+    to: { path: 'customer-device' },
+    icon: { icon: 'tabler-settings-spark' },
+  },
+  {
+    title: 'Phân công nhân sự',
+    to: { path: 'phan-cong' },
+    icon: { icon: 'tabler-git-branch' },
+  },
+  {
+    title: 'Việc của tôi',
+    to: { path: 'phancong-nhanvien' },
+    icon: { icon: 'tabler-building-skyscraper' },
+  },
 
 ]

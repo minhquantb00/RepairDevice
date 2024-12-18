@@ -8,7 +8,7 @@ const router = createRouter({
     {
       path: "/",
       redirect: () => ({
-        path: "department",
+        path: "login",
       }),
     },
     {
@@ -20,6 +20,12 @@ const router = createRouter({
       path: '/register',
       name: 'register',
       component: () => import('@/pages/authentication/register.vue')
+    },
+    {
+      path: '/customer-detail',
+      name: 'customer-detail',
+      component: () => import('@/pages/customer/customer-detail.vue'),
+      eta: { layout: 'default' },
     },
     ...setupLayouts(routes),
   ],

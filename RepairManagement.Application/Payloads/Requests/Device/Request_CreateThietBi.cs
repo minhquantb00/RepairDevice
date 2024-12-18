@@ -19,5 +19,6 @@ namespace RepairManagement.Application.Payloads.Requests.Device
         public string MoTa { get; set; }
         [DataType(DataType.Upload)]
         public Enumerate.TrangThaiThietBi? Status { get; set; }
+        public int? KhachHangId { get; set; }
     }
 }

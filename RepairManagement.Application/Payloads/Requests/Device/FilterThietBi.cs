@@ -13,5 +13,6 @@ namespace RepairManagement.Application.Payloads.Requests.Device
     {
         public string? TenThietBi { get; set; }
         public int? LoaiThietBiId { get; set; }
+        public int? KhachHangId { get; set; }
     }
 }

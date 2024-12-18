@@ -23,7 +23,7 @@ namespace RepairManagement.Domain.Entities
         public virtual ICollection<ChiTietHoaDon>? ChiTietHoaDons { get; set; }
         public virtual ICollection<DanhGiaDichVu>? DanhGiaDichVus { get; set; }
         public virtual ICollection<LichSuSuaChua>? LichSuSuaChuas { get; set; }
-        public virtual ICollection<PhanCongCongViec>? PhanCongCongViecs { get; set; }
+        
         public virtual ICollection<ThietBiSuaChua>? ThietBiSuaChuas { get; set; }
     }
 }

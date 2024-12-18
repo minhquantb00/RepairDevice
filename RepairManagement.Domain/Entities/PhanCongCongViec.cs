@@ -11,8 +11,8 @@ namespace RepairManagement.Domain.Entities
     {
         public int NguoiDungId { get; set; }
         public virtual NguoiDung? NguoiDung { get; set; }
-        public int ThietBiId { get; set; }
-        public virtual ThietBi? ThietBi { get; set; }
+        public int ThietBiSuaChuaId { get; set; }
+        public virtual ThietBiSuaChua? ThietBiSuaChua { get; set; }
         public DateTime ThoiGianPhanCong {  get; set; }
         public DateTime? ThoiGianHoanThanh {  get; set; }
         public string GhiChu {  get; set; }

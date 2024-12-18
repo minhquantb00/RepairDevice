@@ -1,26 +1,32 @@
 <script setup>
 import { paginationMeta } from "@/@fake-db/utils";
 import ConfirmDeleteDialog from "@/components/ConfirmDeleteDialog.vue";
-import ModalAddCustomer from "@/pages/department/modules/ModalAddCustomer.vue";
-import ModalUpdateCustomer from "@/pages/department/modules/ModalUpdateCustomer.vue";
+import ModalAddCustomer from "@/pages/customer/modules/ModalAddCustomer.vue";
+import ModalUpdateCustomer from "@/pages/customer/modules/ModalUpdateCustomer.vue";
 import { CustomerApi } from "@/apis/customer/customerApi";
 import { onMounted } from "vue";
 import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 import { VDataTableServer } from "vuetify/labs/VDataTable";
+import { useRouter } from "vue-router";
+import { DeviceApi } from "@/apis/device/deviceApi";
+import PhanCongNhanVienDetail from "./phancongnhanvien-detail.vue";
+
 const totalInvoices = ref(0);
 const invoices = ref([]);
 const selectedRows = ref([]);
-const dataManager = ref([]);
+const router = useRouter();
 const props = defineProps({
-  customerData: {
+  phanCongCongViecData: {
     type: Object,
     required: true,
+    default: () => ({}),
   },
 });
+const userInfo = JSON.parse(localStorage.getItem('userInfo'))
 const instance = getCurrentInstance();
-const isCustomerAddDialogVisible = ref(false);
-const isCustomerUpdateDialogVisible = ref(false);
+const isPhanCongCongViecDetailDialogVisible = ref(false);
+const listDevice = ref([]);
 const options = ref({
   page: 1,
   itemsPerPage: 10,
@@ -28,13 +34,22 @@ const options = ref({
   groupBy: [],
   search: undefined,
 });
-
 const isLoading = ref(false);
 const currentPage = ref(1);
 const dataId = ref();
 const customerId = ref();
-
-
+const pageSize = ref(10);
+const pageNumber = ref(1);
+const formatCurrency = (value) => {
+  return new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(
+    value
+  );
+};
+const viewDetail = (id) => {
+  router.push({
+    path: "/customer-detail",
+  });
+};
 currentPage.value = options.value.page;
 
 // 👉 headers
@@ -45,29 +60,29 @@ const headers = [
     sortable: false,
   },
   {
-    title: "Họ và tên",
-    key: "hoVaTen",
+    title: "Tên thiết bị",
+    key: "dataResponseThietBiSuaChua",
     sortable: false,
   },
   {
-    title: "Số điện thoại",
-    key: "soDienThoai",
+    title: "Nhân viên",
+    key: "nhanVien",
   },
   {
-    title: "Email",
-    key: "email",
+    title: "Thời gian phân công",
+    key: "thoiGianPhanCong",
   },
   {
-    title: "Địa chỉ",
-    key: "diaChi",
+    title: "Thời gian hoàn thành",
+    key: "thoiGianHoanThanh",
   },
   {
-    title: "Create time",
-    key: "createTime",
+    title: "Ghi chú",
+    key: "ghiChu",
   },
   {
-    title: "Điểm",
-    key: "diem"
+    title: "Trạng thái",
+    key: "status",
   },
   {
     title: "Actions",
@@ -77,24 +92,33 @@ const headers = [
 ];
 
 const filterCustomer = ref({
-  keyword: ''
+  keyword: "",
 });
 
-const getAllCustomer = async (filter) => {
-  const result = await CustomerApi.getAllKhachHang(filterCustomer.value);
-  console.log(result)
+const getPhanCongCongViecByNhanVien = async () => {
+  const result = await DeviceApi.getPhanCongCongViecByNhanVien(userInfo.Id
+  );
+  isLoading.value = true;
+  listDevice.value = result.data;
   invoices.value = result.data;
-  totalInvoices.value = result.length;
+  totalInvoices.value = result.data.length;
 };
-
+watch(
+  () => options.value.page,
+  async (newPage) => {
+    pageNumber.value = newPage;
+    await getPhanCongCongViecByNhanVien();
+  }
+);
 const paginatedData = computed(() => {
   const start = (options.value.page - 1) * options.value.itemsPerPage;
   const end = start + options.value.itemsPerPage;
   return invoices.value.slice(start, end);
 });
-
 const totalPages = computed(() => {
-  return Math.ceil((invoices.value.length * 1.0) / options.value.itemsPerPage);
+  const valueInvoice = Number(invoices.value.length);
+  const valueItemPerPage = Number(options.value.itemsPerPage);
+  return Math.ceil((valueInvoice * 1.0) / valueItemPerPage);
 });
 
 const formatDate = (dateString) => {
@@ -107,58 +131,27 @@ const formatDate = (dateString) => {
 };
 
 const refreshData = async () => {
-  await getAllCustomer(filterCustomer.value);
+  await getPhanCongCongViecByNhanVien();
 };
 
-const openDialogUpdateCustomer = (id) => {
-  isCustomerUpdateDialogVisible.value = true;
-  dataId.value = id
-}
+const openDialogDeviceFixDetail = (id) => {
+  isPhanCongCongViecDetailDialogVisible.value = true;
+  dataId.value = id;
+};
 
-const onConfirmed = async () => {
-  try{
-    const result = await CustomerApi.deleteKhachHang(customerId.value);
-    if(result.status === 200){
-      toast(result.message, {
-      type: "success",
-      transition: "flip",
-      "autoClose": 2000,
-      theme: "dark",
-      dangerouslyHTMLString: true,
-    });
-    await getAllCustomer(filterCustomer.value);
-    }
-    else{
-      toast("Xoá thất bại", {
-      type: "error",
-      transition: "flip",
-      "autoClose": 2000,
-      theme: "dark",
-      dangerouslyHTMLString: true,
-    });
-    }
-  }catch(error){
-    toast(error, {
-      type: "error",
-      transition: "flip",
-      "autoClose": 2000,
-      theme: "dark",
-      dangerouslyHTMLString: true,
-    });
+watch(
+  () => options.value.page,
+  async (newPage) => {
+    pageNumber.value = newPage; // Cập nhật số trang hiện tại
+    await getPhanCongCongViecByNhanVien(); // Gọi lại API để lấy dữ liệu trang mới
   }
-}
-
-const onclickDeleteItem = (id) => {
-  customerId.value = id;
-  instance?.refs.deleteDialog.show();
-}
-
+);
 watchEffect(async () => {
-  await getAllCustomer(filterCustomer.value);
+  await getPhanCongCongViecByNhanVien();
 });
 
 onMounted(async () => {
-  await getAllCustomer(filterCustomer.value);
+  await getPhanCongCongViecByNhanVien();
 });
 </script>
 
@@ -180,30 +173,10 @@ onMounted(async () => {
             style="width: 6.25rem"
             @update:model-value="options.itemsPerPage = parseInt($event, 10)"
           />
-          <!-- 👉 Create invoice -->
-          <VBtn
-            prepend-icon="tabler-plus"
-            variant="elevated"
-            class="me-4"
-            @click="isCustomerAddDialogVisible = true"
-          >
-            Tạo khách hàng
-          </VBtn>
         </div>
 
         <VSpacer />
 
-        <div class="d-flex align-center flex-wrap gap-4">
-          <!-- 👉 Search  -->
-          <div class="invoice-list-filter">
-            <AppTextField
-              v-model="filterCustomer.keyword"
-              placeholder="Tìm kiếm..."
-              density="compact"
-            />
-          </div>
-
-        </div>
       </VCardText>
 
       <VDivider />
@@ -213,7 +186,7 @@ onMounted(async () => {
         v-model="selectedRows"
         v-model:items-per-page="options.itemsPerPage"
         v-model:page="options.page"
-        :loading="isLoading"
+        :loading="loading"
         :headers="headers"
         :items="paginatedData"
         class="text-no-wrap"
@@ -224,32 +197,33 @@ onMounted(async () => {
           {{ (options.page - 1) * options.itemsPerPage + index + 1 }}
         </template>
 
-        <template #item.hoVaTen="{ item }">
-          {{ item.raw.hoVaTen }}
+        <template #item.dataResponseThietBiSuaChua="{ item }">
+          {{ item.raw.dataResponseThietBiSuaChua.tenThietBiSuaChua }}
         </template>
 
-        <template #item.soDienThoai="{ item }">
-          {{ item.raw.soDienThoai }}
+        <template #item.nhanVien="{ item }">
+          {{ item.raw.nhanVien.hoVaTen }}
         </template>
-        <template #item.email="{ item }">
-          {{ item.raw.email }}
+        <template #item.thoiGianPhanCong="{ item }">
+          {{ formatDate(item.raw.thoiGianPhanCong)}}
         </template>
-        <template #item.diaChi="{ item }">
-          {{ item.raw.diaChi }}
+        <template #item.thoiGianHoanThanh="{ item }">
+          {{ formatDate(item.raw.thoiGianHoanThanh) }}
         </template>
-        <template #item.createTime="{ item }">
-          {{ formatDate(item.raw.createTime) }}
+        <template #item.ghiChu="{ item }">
+          {{ item.raw.ghiChu }}
         </template>
-
+        <template #item.status="{ item }">
+          {{ item.raw.status }}
+        </template>
 
         <!-- Actions -->
         <template #item.actions="{ item }">
-          <IconBtn @click="openDialogUpdateCustomer(item.raw.id)">
-            <VIcon icon="tabler-settings-check" />
-          </IconBtn>
-
-          <IconBtn @click="onclickDeleteItem(item.raw.id)">
-            <VIcon icon="tabler-trash" />
+          <IconBtn>
+            <VIcon
+              icon="tabler-eye-spark"
+              @click="openDialogDeviceFixDetail(item.raw.id)"
+            />
           </IconBtn>
         </template>
 
@@ -271,23 +245,13 @@ onMounted(async () => {
               rounded="circle"
             >
               <template #prev="slotProps">
-                <VBtn
-                  variant="tonal"
-                  color="default"
-                  v-bind="slotProps"
-                  :icon="false"
-                >
+                <VBtn variant="tonal" color="default" v-bind="slotProps" :icon="false">
                   Previous
                 </VBtn>
               </template>
 
               <template #next="slotProps">
-                <VBtn
-                  variant="tonal"
-                  color="default"
-                  v-bind="slotProps"
-                  :icon="false"
-                >
+                <VBtn variant="tonal" color="default" v-bind="slotProps" :icon="false">
                   Next
                 </VBtn>
               </template>
@@ -297,22 +261,10 @@ onMounted(async () => {
       </VDataTableServer>
       <!-- !SECTION -->
     </VCard>
-    <ModalAddCustomer
-      v-model:isDialogVisible="isCustomerAddDialogVisible"
-      :customerData="props.customerData"
-      @submit="refreshData"
-    />
-    <ModalUpdateCustomer
-      v-model:isDialogVisible="isCustomerUpdateDialogVisible"
+    <PhanCongNhanVienDetail
+      v-model:isDialogVisible="isPhanCongCongViecDetailDialogVisible"
       :dataId="dataId"
-      @submit="refreshData"
     />
-    <ConfirmDeleteDialog
-      @onConfirmed="onConfirmed"
-      title="Xác nhận"
-      content="Bạn có muốn xóa không"
-      ref="deleteDialog"
-    ></ConfirmDeleteDialog>
   </div>
 </template>
 

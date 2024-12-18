@@ -24,5 +24,6 @@ namespace RepairManagement.Domain.Entities
         public string GhiChuCuaKhachHang { get; set;}
         public Enumerate.ThietBiSuaChuaStatus Status { get; set; } = Enumerate.ThietBiSuaChuaStatus.ChuaSua;
         public virtual ICollection<LinhKienSuaChuaThietBi>? LinhKienSuaChuaThietBis { get; set; }
+        public virtual ICollection<PhanCongCongViec>? PhanCongCongViecs { get; set; }
     }
 }
