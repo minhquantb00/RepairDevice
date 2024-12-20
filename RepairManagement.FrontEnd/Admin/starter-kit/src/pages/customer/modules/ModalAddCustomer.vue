@@ -33,9 +33,7 @@ const createCustomer = ref({
 const emit = defineEmits(["submit", "update:isDialogVisible"]);
 const customerData = ref(structuredClone(toRaw(props.customerData)));
 
-watch(props, () => {
-  createCustomer.value = structuredClone(toRaw(createCustomer.value));
-});
+
 
 const onFormSubmit = () => {
 

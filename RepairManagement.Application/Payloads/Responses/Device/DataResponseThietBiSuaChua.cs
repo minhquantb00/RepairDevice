@@ -13,6 +13,8 @@ namespace RepairManagement.Application.Payloads.Responses.Device
         public int Id { get; set; }
         public string TenThietBiSuaChua { get; set; }
         public string MoTaLoi { get; set; }
+        public string AnhThietBi {  get; set; }
+        public double TongTien { get; set; }
         public DateTime ThoiGianNhanSua { get; set; }
         public DateTime? ThoiGianGiaoHang { get; set; }
         public DateTime ThoiGianDuKien { get; set; }

@@ -1,5 +1,6 @@
 <script setup>
 import {computed, ref, onMounted} from "vue"
+import UpdatePhanCongNhanVien from "./modules/UpdatePhanCongNhanVien.vue"
 import {
   avatarText,
   kFormatter,
@@ -16,7 +17,7 @@ const props = defineProps({
 const thietBi = ref({});
 const data = ref({});
 const nv = ref({})
-
+const isUpdatePhanCongVisible = ref(false);
 const formatCurrency = (value) => {
   return new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(
     value
@@ -30,6 +31,13 @@ const formatDate = (dateString) => {
 
   return `${year}-${month}-${day}`;
 };
+const updateData = () => {
+  thietBi.value = props.phanCongCongViecData;
+  data.value = thietBi.value.dataResponseThietBiSuaChua || {};
+  nv.value = thietBi.value.nhanVien || {};
+};
+
+watch(() => props.phanCongCongViecData, updateData, { immediate: true });
 onMounted( () => {
   thietBi.value = props.phanCongCongViecData;
   data.value = thietBi.value.dataResponseThietBiSuaChua;
@@ -117,11 +125,16 @@ onMounted( () => {
                 </h6>
               </VListItemTitle>
             </VListItem>
+            <VBtn @click="isUpdatePhanCongVisible = true">Chỉnh sửa</VBtn>
           </VList>
         </VCardText>
       </VCard>
     </VCol>
   </VRow>
+  <UpdatePhanCongNhanVien
+      v-model:isDialogVisible="isUpdatePhanCongVisible"
+      :phanCongCongViecData="props.phanCongCongViecData"
+    />
 </template>
 
 <style lang="scss" scoped>

@@ -19,10 +19,10 @@ const checkoutSteps = [
     title: 'Đã hoàn thành',
     icon: 'custom-payment',
   },
-  {
-    title: 'Đang giao',
-    icon: 'custom-trending',
-  },
+  // {
+  //   title: 'Đang giao',
+  //   icon: 'custom-trending',
+  // },
 ]
 
 const checkoutData = ref({

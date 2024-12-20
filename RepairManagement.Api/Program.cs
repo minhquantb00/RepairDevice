@@ -71,6 +71,9 @@ builder.Services.AddScoped<LinhKienConverter>();
 builder.Services.AddScoped<LinhKienSuaChuaConverter>();
 builder.Services.AddScoped<PhanCongCongViecConverter>();
 builder.Services.AddScoped<XuatNhapKhoConverter>();
+builder.Services.AddScoped<HieuSuatConverter>();
+builder.Services.AddScoped<ChiTietHoaDonConverter>();
+builder.Services.AddScoped<HoaDonConverter>();
 
 builder.Services.AddScoped<IRepository<KhachHang>, Repository<KhachHang>>();
 builder.Services.AddScoped<IRepository<RefreshToken>, Repository<RefreshToken>>();
@@ -91,6 +94,10 @@ builder.Services.AddScoped<IRepository<LinhKienSuaChuaThietBi>, Repository<LinhK
 builder.Services.AddScoped<IRepository<PhanCongCongViec>, Repository<PhanCongCongViec>>();
 builder.Services.AddScoped<IRepository<HangTonKho>, Repository<HangTonKho>>();
 builder.Services.AddScoped<IRepository<XuatNhapKho>, Repository<XuatNhapKho>>();
+builder.Services.AddScoped<IRepository<ThongBao>, Repository<ThongBao>>();
+builder.Services.AddScoped<IRepository<HieuSuatNhanVien>, Repository<HieuSuatNhanVien>>();
+builder.Services.AddScoped<IRepository<HoaDon>,  Repository<HoaDon>>();
+builder.Services.AddScoped<IRepository<ChiTietHoaDon>, Repository<ChiTietHoaDon>>();
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IEmailService, EmailService>();

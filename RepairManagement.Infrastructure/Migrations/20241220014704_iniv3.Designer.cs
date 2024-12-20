@@ -12,8 +12,8 @@ using RepairManagement.Infrastructure.DataAccess;
 namespace RepairManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241216161655_updatedb")]
-    partial class updatedb
+    [Migration("20241220014704_iniv3")]
+    partial class iniv3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -524,7 +524,7 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<double>("GiaBan")
                         .HasColumnType("float");
 
-                    b.Property<double>("GiaNhap")
+                    b.Property<double?>("GiaNhap")
                         .HasColumnType("float");
 
                     b.Property<string>("ImageUrl")
@@ -556,6 +556,9 @@ namespace RepairManagement.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("LinhKienId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SoLuongDung")
                         .HasColumnType("int");
 
                     b.Property<int>("ThietBiSuaChuaId")
@@ -646,9 +649,8 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<int>("NguoiDungId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");

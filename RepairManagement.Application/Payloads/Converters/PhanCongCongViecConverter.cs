@@ -28,7 +28,7 @@ namespace RepairManagement.Application.Payloads.Converters
             {
                 GhiChu = entity.GhiChu,
                 Id = entity.Id,
-                Status = entity.Status,
+                Status = entity.Status.ToString(),
                 ThoiGianHoanThanh = entity.ThoiGianHoanThanh,
                 ThoiGianPhanCong = entity.ThoiGianPhanCong,
                 DataResponseThietBiSuaChua = _thietBiSuaChuaConverter.EntityToDTO(_thietBiSuaChuaRepository.GetByIdAsync(entity.ThietBiSuaChuaId).Result),

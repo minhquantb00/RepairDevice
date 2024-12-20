@@ -302,7 +302,7 @@ namespace RepairManagement.Infrastructure.Repositories
         #region GetAsync
         public async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> prodecate = null)
         {
-            return await DBSet.SingleOrDefaultAsync(prodecate);
+            return await DBSet.FirstOrDefaultAsync(prodecate);
         }
         #endregion
         #region GetByIdAsync

@@ -12,3 +12,8 @@ export const DepartmentType = {
   Technical: "Phòng ban kỹ thuật"
 }
 
+export const ThietBiSuaChuaStatus = {
+  DangSua: "DangSua",
+  ChuaSua: "ChuaSua",
+  HoanThanh: "HoanThanh"
+}

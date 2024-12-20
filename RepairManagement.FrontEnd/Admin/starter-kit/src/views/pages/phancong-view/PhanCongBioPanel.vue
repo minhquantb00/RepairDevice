@@ -134,15 +134,7 @@ const computedDeviceStatus = computed(() => {
         </VCardText>
 
         <!-- 👉 Edit and Suspend button -->
-        <VCardText class="d-flex justify-center">
-          <VBtn
-            variant="elevated"
-            class="me-4"
-          >
-            Chỉnh sửa
-          </VBtn>
 
-        </VCardText>
       </VCard>
     </VCol>
     <!-- !SECTION -->

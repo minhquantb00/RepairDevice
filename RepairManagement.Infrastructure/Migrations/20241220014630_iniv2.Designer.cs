@@ -12,8 +12,8 @@ using RepairManagement.Infrastructure.DataAccess;
 namespace RepairManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241210153450_initialv2")]
-    partial class initialv2
+    [Migration("20241220014630_iniv2")]
+    partial class iniv2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -92,7 +92,10 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<int>("HoaDonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ThietBiId")
+                    b.Property<int?>("ThietBiId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");
 
                     b.Property<double>("UnitPrice")
@@ -103,6 +106,8 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.HasIndex("HoaDonId");
 
                     b.HasIndex("ThietBiId");
+
+                    b.HasIndex("ThietBiSuaChuaId");
 
                     b.ToTable("ChiTietHoaDons");
                 });
@@ -194,6 +199,9 @@ namespace RepairManagement.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("DichVuId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -221,6 +229,8 @@ namespace RepairManagement.Infrastructure.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DichVuId");
 
                     b.HasIndex("KhachHangId");
 
@@ -391,7 +401,7 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<int>("NguoiDungId")
+                    b.Property<int?>("NguoiDungId")
                         .HasColumnType("int");
 
                     b.Property<string>("SoDienThoai")
@@ -519,8 +529,11 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<double>("GiaBan")
                         .HasColumnType("float");
 
-                    b.Property<double>("GiaNhap")
+                    b.Property<double?>("GiaNhap")
                         .HasColumnType("float");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LoaiLinhKien")
                         .IsRequired()
@@ -550,6 +563,9 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<int>("LinhKienId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SoLuongDung")
+                        .HasColumnType("int");
+
                     b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");
 
@@ -569,6 +585,9 @@ namespace RepairManagement.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -635,11 +654,10 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<int>("NguoiDungId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
-                    b.Property<int>("ThietBiId")
+                    b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ThoiGianHoanThanh")
@@ -652,7 +670,7 @@ namespace RepairManagement.Infrastructure.Migrations
 
                     b.HasIndex("NguoiDungId");
 
-                    b.HasIndex("ThietBiId");
+                    b.HasIndex("ThietBiSuaChuaId");
 
                     b.ToTable("PhanCongCongViecs");
                 });
@@ -713,6 +731,12 @@ namespace RepairManagement.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<double?>("Gia")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("KhachHangId")
                         .HasColumnType("int");
@@ -910,15 +934,19 @@ namespace RepairManagement.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RepairManagement.Domain.Entities.ThietBi", "ThietBi")
+                    b.HasOne("RepairManagement.Domain.Entities.ThietBi", null)
                         .WithMany("ChiTietHoaDons")
-                        .HasForeignKey("ThietBiId")
+                        .HasForeignKey("ThietBiId");
+
+                    b.HasOne("RepairManagement.Domain.Entities.ThietBiSuaChua", "ThietBiSuaChua")
+                        .WithMany()
+                        .HasForeignKey("ThietBiSuaChuaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("HoaDon");
 
-                    b.Navigation("ThietBi");
+                    b.Navigation("ThietBiSuaChua");
                 });
 
             modelBuilder.Entity("RepairManagement.Domain.Entities.ConfirmEmail", b =>
@@ -957,9 +985,17 @@ namespace RepairManagement.Infrastructure.Migrations
 
             modelBuilder.Entity("RepairManagement.Domain.Entities.DatLichSuaChua", b =>
                 {
+                    b.HasOne("RepairManagement.Domain.Entities.DichVu", "DichVu")
+                        .WithMany()
+                        .HasForeignKey("DichVuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("RepairManagement.Domain.Entities.KhachHang", "KhachHang")
                         .WithMany("DatLichSuaChuas")
                         .HasForeignKey("KhachHangId");
+
+                    b.Navigation("DichVu");
 
                     b.Navigation("KhachHang");
                 });
@@ -1001,9 +1037,7 @@ namespace RepairManagement.Infrastructure.Migrations
                 {
                     b.HasOne("RepairManagement.Domain.Entities.NguoiDung", "NguoiDung")
                         .WithMany("KhachHangs")
-                        .HasForeignKey("NguoiDungId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("NguoiDungId");
 
                     b.Navigation("NguoiDung");
                 });
@@ -1076,15 +1110,15 @@ namespace RepairManagement.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RepairManagement.Domain.Entities.ThietBi", "ThietBi")
+                    b.HasOne("RepairManagement.Domain.Entities.ThietBiSuaChua", "ThietBiSuaChua")
                         .WithMany("PhanCongCongViecs")
-                        .HasForeignKey("ThietBiId")
+                        .HasForeignKey("ThietBiSuaChuaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("NguoiDung");
 
-                    b.Navigation("ThietBi");
+                    b.Navigation("ThietBiSuaChua");
                 });
 
             modelBuilder.Entity("RepairManagement.Domain.Entities.RefreshToken", b =>
@@ -1262,14 +1296,14 @@ namespace RepairManagement.Infrastructure.Migrations
 
                     b.Navigation("LichSuSuaChuas");
 
-                    b.Navigation("PhanCongCongViecs");
-
                     b.Navigation("ThietBiSuaChuas");
                 });
 
             modelBuilder.Entity("RepairManagement.Domain.Entities.ThietBiSuaChua", b =>
                 {
                     b.Navigation("LinhKienSuaChuaThietBis");
+
+                    b.Navigation("PhanCongCongViecs");
                 });
 #pragma warning restore 612, 618
         }

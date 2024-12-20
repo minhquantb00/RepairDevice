@@ -1,5 +1,4 @@
 
-import axiosIns from "@/plugins/axios";
 import axios from "axios";
 const authorization = localStorage.getItem("accessToken")
   ? localStorage.getItem("accessToken")
@@ -42,6 +41,37 @@ const createThietBi = async (params) => {
       throw error;
   }
 };
+const createHoaDon = async (params) => {
+  try {
+      const result = await axios.post(`https://localhost:7183/api/${CONTROLLER_NAME}/CreateHoaDon`, params, {
+        headers: {
+          Authorization: `Bearer ${authorization}`,
+        }
+      });
+      return result.data;
+  } catch (error) {
+      throw error;
+  }
+};
+
+const createVnPayUrl = async (billId) => {
+  try {
+    const result = await axios.post(
+      `https://localhost:7183/api/${CONTROLLER_NAME}/CreateVnPayUrl?billId=${billId}`,
+      {}, // Body của request (trống trong trường hợp này)
+      {
+        headers: {
+          Authorization: `Bearer ${authorization}`, // Đảm bảo truyền vào đúng token
+        },
+      }
+    );
+    return result.data;
+  } catch (error) {
+    console.error('Error creating VnPay URL:', error.response?.data || error.message);
+    throw error;
+  }
+};
+
 
 const getAllThietBis = async (params) => {
   try {
@@ -75,11 +105,55 @@ const getLoaiThietBiById = async (id) => {
   }
 };
 
+const getPhanCongCongViecDangXuLy = async (params) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetPhanCongCongViecDangXuLy`, {
+      headers: {
+        Authorization: `Bearer ${authorization}`,
+      }
+    });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getPhanCongCongViecChoXuLy = async (params) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetPhanCongCongViecChoXuLy`, {
+      headers: {
+        Authorization: `Bearer ${authorization}`,
+      }
+    });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getPhanCongCongViecDaHoanThanh = async (params) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetPhanCongCongViecDaHoanThanh`, {
+      headers: {
+        Authorization: `Bearer ${authorization}`,
+      }
+    });
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const DeviceApi = {
+  getPhanCongCongViecDaHoanThanh,
+  getPhanCongCongViecChoXuLy,
+  getPhanCongCongViecDangXuLy,
   createThietBi,
   getAllThietBis,
   getThietBiById,
   createLoaiThietBi,
   getAllLoaiThietBis,
-  getLoaiThietBiById
+  getLoaiThietBiById,
+  createHoaDon,
+  createVnPayUrl
 }

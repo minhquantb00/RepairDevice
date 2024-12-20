@@ -13,13 +13,25 @@ namespace RepairManagement.Application.Payloads.Converters
     {
         private readonly IRepository<LinhKienSuaChuaThietBi> _linhKienSuaChua;
         private readonly LinhKienSuaChuaConverter _linhKienSuaChuaConverter;
-        public ThietBiSuaChuaConverter( IRepository<LinhKienSuaChuaThietBi> linhKienSuaChua, LinhKienSuaChuaConverter linhKienSuaChuaConverter)
+        private readonly IRepository<ThietBi> _repository;
+        private readonly IRepository<LinhKien> _linhKien;
+        public ThietBiSuaChuaConverter( IRepository<LinhKienSuaChuaThietBi> linhKienSuaChua, LinhKienSuaChuaConverter linhKienSuaChuaConverter, IRepository<ThietBi> repository, IRepository<LinhKien> linhKien)
         {
             _linhKienSuaChua = linhKienSuaChua;
             _linhKienSuaChuaConverter = linhKienSuaChuaConverter;
+            _repository = repository;
+            _linhKien = linhKien;
         }
         public DataResponseThietBiSuaChua EntityToDTO(ThietBiSuaChua thietBiSuaChua)
         {
+            var linhKienSuaChua = _linhKienSuaChua.GetAllAsync(item => item.ThietBiSuaChuaId == thietBiSuaChua.Id).Result;
+            double? tongTien = 0;
+            foreach(var item in linhKienSuaChua)
+            {
+                var linhKien = _linhKien.GetAsync(x => x.Id == item.LinhKienId).Result;
+                tongTien += (double)linhKien.GiaBan * item.SoLuongDung;
+            }
+
             return new DataResponseThietBiSuaChua
             {
                 GhiChuCuaKhachHang = thietBiSuaChua.GhiChuCuaKhachHang,
@@ -32,7 +44,9 @@ namespace RepairManagement.Application.Payloads.Converters
                 ThoiGianNhanSua = thietBiSuaChua.ThoiGianNhanSua,
                 ThoiGianThucTe = thietBiSuaChua.ThoiGianThucTe,
                 Id = thietBiSuaChua.Id,
+                TongTien =(double) tongTien,
                 DataResponseLinhKienSuaChuas = _linhKienSuaChua.GetAllAsync(x => x.ThietBiSuaChuaId == thietBiSuaChua.Id).Result.Select(item => _linhKienSuaChuaConverter.EntityToDTO(item)),
+                AnhThietBi = _repository.GetByIdAsync(thietBiSuaChua.ThietBiId).Result.ImageUrl
             };
         }
     }

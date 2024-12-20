@@ -134,7 +134,7 @@ const refreshData = async () => {
   await getPhanCongCongViecByNhanVien();
 };
 
-const openDialogDeviceFixDetail = (id) => {
+const openDialogPhanCongCongViecDetail = (id) => {
   isPhanCongCongViecDetailDialogVisible.value = true;
   dataId.value = id;
 };
@@ -222,7 +222,7 @@ onMounted(async () => {
           <IconBtn>
             <VIcon
               icon="tabler-eye-spark"
-              @click="openDialogDeviceFixDetail(item.raw.id)"
+              @click="openDialogPhanCongCongViecDetail(item.raw.id)"
             />
           </IconBtn>
         </template>
@@ -263,7 +263,7 @@ onMounted(async () => {
     </VCard>
     <PhanCongNhanVienDetail
       v-model:isDialogVisible="isPhanCongCongViecDetailDialogVisible"
-      :dataId="dataId"
+      v-model:dataId="dataId"
     />
   </div>
 </template>

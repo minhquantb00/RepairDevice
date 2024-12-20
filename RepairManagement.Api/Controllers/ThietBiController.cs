@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using RepairManagement.Application.Payloads.Requests.Auth;
 using RepairManagement.Application.Payloads.Requests.Device;
 using RepairManagement.Application.Payloads.Requests.DeviceType;
 using RepairManagement.Application.Payloads.ResponseDatas;
@@ -89,7 +90,8 @@ namespace RepairManagement.Api.Controllers
         }
         [HttpPut]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> UpdatePhanCongCongViec(Request_UpdatePhanCongCongViec request)
+        [Consumes(contentType: "multipart/form-data")]
+        public async Task<IActionResult> UpdatePhanCongCongViec([FromForm] Request_UpdatePhanCongCongViec request)
         {
             return Ok(await _thietBiService.UpdatePhanCongCongViec(request));
         }
@@ -115,7 +117,7 @@ namespace RepairManagement.Api.Controllers
         }
         [HttpPost]
         [Consumes(contentType: "multipart/form-data")]
-        public async Task<IActionResult> CreateXuatNhapKho(Request_CreateXuatNhapKho request)
+        public async Task<IActionResult> CreateXuatNhapKho([FromForm] Request_CreateXuatNhapKho request)
         {
             return Ok(await _thietBiService.CreateXuatNhapKho(request));
         }
@@ -149,20 +151,111 @@ namespace RepairManagement.Api.Controllers
         {
             return Ok(await _thietBiService.GetPhanCongCongViecByNhanVien(nhanVienId));
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> XoaLinhKienSuaChua([FromRoute] int id)
+        {
+            return Ok(await _thietBiService.XoaLinhKienSuaChua(id));
+        }
         [HttpGet]
         public async Task<IActionResult> GetAllLinhKien()
         {
             return Ok(await _thietBiService.GetAllLinhKien());
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllLinhKienSuaChua()
+        public async Task<IActionResult> GetAllLinhKienSuaChua(int thietBiSuaChuaId)
         {
-            return Ok(await _thietBiService.GetAllLinhKienSuaChua());
+            return Ok(await _thietBiService.GetAllLinhKienSuaChua(thietBiSuaChuaId));
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPhanCongCongViecById([FromRoute] int id)
         {
             return Ok(await _thietBiService.GetPhanCongCongViecById(id));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAllLichSuSuaChua(int khachHangId)
+        {
+            return Ok(await _thietBiService.GetAllLichSuSuaChua(khachHangId));
+        }
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Consumes(contentType: "multipart/form-data")]
+        public async Task<IActionResult> CreateLinhKien([FromForm] Request_CreateLinhKien request)
+        {
+            return Ok(await _thietBiService.CreateLinhKien(request));
+        }
+
+        [HttpPut]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Consumes(contentType: "multipart/form-data")]
+        public async Task<IActionResult> UpdateLinhKien([FromForm] Request_UpdateLinhKien request)
+        {
+            return Ok(await _thietBiService.UpdateLinhKien(request));
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> XoaLinhKien([FromRoute] int id)
+        {
+            return Ok(await _thietBiService.XoaLinhKien(id));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateNhanVien(Request_register request)
+        {
+            return Ok(await _thietBiService.CreateNhanVien(request));
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById([FromRoute] int id)
+        {
+            return Ok(await _thietBiService.GetUserById(id));
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser([FromRoute] int id)
+        {
+            return Ok(await _thietBiService.DeleteUser(id));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetAllHieuSuat([FromQuery] int userId)
+        {
+            return Ok(await _thietBiService.GetAllHieuSuat(userId));
+        }
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> GetPhanCongCongViecChoXuLy()
+        {
+            return Ok(await _thietBiService.GetPhanCongCongViecChoXuLyBy());
+        }
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> GetPhanCongCongViecDangXuLy()
+        {
+            return Ok(await _thietBiService.GetPhanCongCongViecDangXuLy());
+        }
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> GetPhanCongCongViecDaHoanThanh()
+        {
+            return Ok(await _thietBiService.GetPhanCongCongViecDaHoanThanh());
+        }
+
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> CreateVnPayUrl([FromQuery] int billId)
+        {
+            return Ok(await _thietBiService.CreateUrlPayment(billId, HttpContext));
+        }
+        [HttpGet]
+        public async Task<IActionResult> VNPayReturn()
+        {
+            var vnpayData = HttpContext.Request.Query;
+            return Ok(await _thietBiService.VnPayReturn(vnpayData));
+        }
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> CreateHoaDon(Request_CreateHoaDon request)
+        {
+            return Ok(await _thietBiService.CreateHoaDon(request));
         }
     }
 }

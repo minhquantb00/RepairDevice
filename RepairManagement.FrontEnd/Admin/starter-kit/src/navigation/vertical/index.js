@@ -24,5 +24,15 @@ export default [
     to: { path: 'phancong-nhanvien' },
     icon: { icon: 'tabler-building-skyscraper' },
   },
+  {
+    title: 'Quản lý linh kiện',
+    to: { path: 'linh-kien' },
+    icon: { icon: 'tabler-access-point' },
+  },
+  {
+    title: 'Quản lý nhân viên',
+    to: { path: 'nhan-vien' },
+    icon: { icon: 'tabler-user-check' },
+  },
 
 ]

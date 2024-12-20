@@ -20,8 +20,13 @@ const userTab = ref(null);
 const isLoading = ref(false);
 const phanCongCongViecData = ref({})
 const emit = defineEmits(["submit", "update:isDialogVisible"]);
-const dialogModelValueUpdate = (val) => {
+const dialogModelValueUpdate = async (val) => {
   emit("update:isDialogVisible", val);
+  if (!val) {
+    phanCongCongViecData.value = {}; // Xóa dữ liệu khi đóng dialog (nếu cần)
+  } else {
+    await getPhanCongCongViecById(); // Tải lại dữ liệu khi mở
+  }
 };
 const tabs = [
   {
@@ -31,15 +36,17 @@ const tabs = [
 ];
 
 const getPhanCongCongViecById = async () => {
-  const result = await DeviceApi.getPhanCongCongViecById(props.dataId);
-  console.log(result.data);
-  phanCongCongViecData.value = result.data;
-}
+
+    isLoading.value = true;
+    const result = await DeviceApi.getPhanCongCongViecById(props.dataId);
+      phanCongCongViecData.value = result.data;
+};
 watch(
   () => props.isDialogVisible,
   async (newValue) => {
     if (newValue) {
-      await getPhanCongCongViecById();
+      phanCongCongViecData.value = {}; // Reset dữ liệu cũ (tránh tình trạng hiển thị sai).
+      await getPhanCongCongViecById(); // Gọi lại API để lấy dữ liệu mới.
     }
   }
 );
@@ -59,7 +66,7 @@ onMounted(async () => {
     <VCard>
       <VRow style="padding: 20px 40px">
         <VCol cols="9" md="5" lg="4">
-          <PhanCongNhanVienBioPanel :phanCongCongViecData="phanCongCongViecData" />
+          <PhanCongNhanVienBioPanel v-if="Object.keys(phanCongCongViecData).length > 0"  :phanCongCongViecData="phanCongCongViecData" />
         </VCol>
 
         <VCol cols="9" md="7" lg="8">
@@ -73,7 +80,7 @@ onMounted(async () => {
           <VWindow v-model="userTab" class="mt-6 disable-tab-transition" :touch="false">
 
             <VWindowItem>
-              <PhanCongNhanVienTabSecurity  :phanCongCongViecData="phanCongCongViecData"/>
+              <PhanCongNhanVienTabSecurity v-if="Object.keys(phanCongCongViecData).length > 0"   :phanCongCongViecData="phanCongCongViecData"/>
             </VWindowItem>
 
           </VWindow>

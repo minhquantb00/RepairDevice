@@ -1,4 +1,6 @@
 <script setup>
+import {ref} from "vue"
+import {DeviceApi} from "@/apis/device/deviceApi"
 const props = defineProps({
   currentStep: {
     type: Number,
@@ -14,12 +16,17 @@ const emit = defineEmits([
   'update:currentStep',
   'update:checkout-data',
 ])
+const listDevice = ref([]);
+
+const getAllListDevice = async () => {
+  const result =await DeviceApi.getPhanCongCongViecChoXuLy();
+  listDevice.value = result.data
+}
 
 const checkoutCartDataLocal = ref(props.checkoutData)
 
 const removeItem = item => {
-  checkoutCartDataLocal.value.cartItems = checkoutCartDataLocal.value.cartItems.filter(i => i.id !== item.id)
-  console.log(checkoutCartDataLocal.value.cartItems)
+  listDevice = listDevice.filter(i => i.id !== item.id)
 }
 
 //  cart total
@@ -39,24 +46,27 @@ const nextStep = () => {
 }
 
 watch(() => props.currentStep, updateCartData)
+onMounted(async () => {
+  await getAllListDevice();
+})
 </script>
 
 <template>
-  <VRow v-if="checkoutCartDataLocal">
+  <VRow >
     <VCol
       cols="12"
       md="8"
     >
 
       <h6 class="text-h6 my-4">
-        Các thiết bị của bạn ({{ checkoutCartDataLocal.cartItems.length }} thiết bị)
+        Các thiết bị của bạn ({{ listDevice.length }} thiết bị)
       </h6>
 
       <!-- 👉 Cart items -->
-      <div class="border rounded">
+      <div class="border rounded" v-if="listDevice.length > 0">
         <template
-          v-for="(item, index) in checkoutCartDataLocal.cartItems"
-          :key="item.name"
+          v-for="(item) in listDevice"
+          :key="item.id"
         >
           <div
             class="d-flex align-center gap-3 pa-5 position-relative flex-column flex-sm-row"
@@ -75,7 +85,7 @@ watch(() => props.currentStep, updateCartData)
             <div>
               <VImg
                 width="140"
-                :src="item.image"
+                :src="item.dataResponseThietBiSuaChua.anhThietBi"
               />
             </div>
 
@@ -85,19 +95,11 @@ watch(() => props.currentStep, updateCartData)
             >
               <div>
                 <h6 class="text-base font-weight-regular mb-4">
-                  {{ item.name }}
+                  {{ item.dataResponseThietBiSuaChua.tenThietBiSuaChua }}
                 </h6>
                 <div class="d-flex align-center text-no-wrap gap-2 text-base">
                   <span class="text-disabled">Phân công nhân viên:</span>
-                  <span class="text-primary">{{ item.seller }}</span>
-                  <VChip
-                    :color="item.inStock ? 'success' : 'error'"
-                    label
-                  >
-                    <span class="text-xs font-weight-medium">
-                      {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
-                    </span>
-                  </VChip>
+                  <span class="text-primary">{{ item.nhanVien.hoVaTen }}</span>
                 </div>
 
               </div>
@@ -108,17 +110,11 @@ watch(() => props.currentStep, updateCartData)
         </template>
       </div>
 
-      <!-- 👉 Add more from wishlist -->
-      <div class="d-flex align-center justify-space-between border rounded py-2 px-5 text-base mt-4">
-        <a href="#">Xem tất cả</a>
-        <VIcon
-          icon="tabler-chevron-right"
-          class="flip-in-rtl"
-        />
-      </div>
+      <div v-else>Không có thiết bị nào trong mục này </div>
+
     </VCol>
 
-    <VCol
+    <!-- <VCol
       cols="12"
       md="4"
       style="margin-top: 53px"
@@ -130,7 +126,6 @@ watch(() => props.currentStep, updateCartData)
 
         <VDivider />
 
-        <!-- 👉 Price details -->
         <VCardText>
           <h6 class="text-base font-weight-medium mb-3">
             Chi phí linh kiện sửa chữa dự kiến
@@ -175,14 +170,7 @@ watch(() => props.currentStep, updateCartData)
         </VCardText>
       </VCard>
 
-      <VBtn
-        block
-        class="mt-4"
-        @click="nextStep"
-      >
-        Bước kế tiếp
-      </VBtn>
-    </VCol>
+    </VCol> -->
   </VRow>
 </template>
 

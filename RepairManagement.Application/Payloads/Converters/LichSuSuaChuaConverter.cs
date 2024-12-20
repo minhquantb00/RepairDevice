@@ -12,9 +12,11 @@ namespace RepairManagement.Application.Payloads.Converters
     public class LichSuSuaChuaConverter
     {
         private readonly IRepository<NguoiDung> _nguoiDungRepository;
-        public LichSuSuaChuaConverter(IRepository<NguoiDung> nguoiDungRepository)
+        private readonly IRepository<ThietBi> _thietBiRepository;
+        public LichSuSuaChuaConverter(IRepository<NguoiDung> nguoiDungRepository, IRepository<ThietBi> thietBiRepository)
         {
             _nguoiDungRepository = nguoiDungRepository;
+            _thietBiRepository = thietBiRepository;
         }
         public DataResponseLichSuSuaChua EntityToDTO(LichSuSuaChua lichSuSuaChua)
         {
@@ -27,6 +29,7 @@ namespace RepairManagement.Application.Payloads.Converters
                 Status = lichSuSuaChua.Status,
                 ThoiGianSua = lichSuSuaChua.ThoiGianSua,
                 Id = lichSuSuaChua.Id,
+                TenThietBi = _thietBiRepository.GetByIdAsync(lichSuSuaChua.ThietBiId).Result.TenThietBi,
             };
         }
     }

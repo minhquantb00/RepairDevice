@@ -97,9 +97,35 @@ const createLinhKienSuaChua = async (params) => {
       throw error;
   }
 };
-const updatePhanCongCongViec = async (params) => {
+const updateThietBi = async (params) => {
   try {
-      const result = await axios.put(`https://localhost:7183/api/${CONTROLLER_NAME}/UpdatePhanCongCongViec`, params, {
+      const result = await axios.put(`https://localhost:7183/api/${CONTROLLER_NAME}/UpdateThietBi`, params, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${authorization}`,
+        }
+      });
+      return result.data;
+  } catch (error) {
+      throw error;
+  }
+};
+const updateLinhKien = async (params) => {
+  try {
+      const result = await axios.put(`https://localhost:7183/api/${CONTROLLER_NAME}/UpdateLinhKien`, params, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${authorization}`,
+        }
+      });
+      return result.data;
+  } catch (error) {
+      throw error;
+  }
+};
+const xoaLinhKien = async (id) => {
+  try {
+      const result = await axios.delete(`https://localhost:7183/api/${CONTROLLER_NAME}/XoaLinhKien/${id}`,{
         headers: {
           Authorization: `Bearer ${authorization}`,
         }
@@ -109,14 +135,9 @@ const updatePhanCongCongViec = async (params) => {
       throw error;
   }
 };
-const updateThietBi = async (params) => {
+const xoaLinhKienSuaChua = async (id) => {
   try {
-      const result = await axios.put(`https://localhost:7183/api/${CONTROLLER_NAME}/UpdateThietBi`, params, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${authorization}`,
-        }
-      });
+      const result = await axios.delete(`https://localhost:7183/api/${CONTROLLER_NAME}/XoaLinhKienSuaChua/${id}`);
       return result.data;
   } catch (error) {
       throw error;
@@ -135,7 +156,28 @@ const createThietBi = async (params) => {
       throw error;
   }
 };
+const createLinhKien = async (params) => {
+  try {
+      const result = await axios.post(`https://localhost:7183/api/${CONTROLLER_NAME}/CreateLinhKien`, params, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${authorization}`,
+        }
+      });
+      return result.data;
+  } catch (error) {
+      throw error;
+  }
+};
 
+const createNhanVien = async (params) => {
+  try {
+      const result = await axios.post(`https://localhost:7183/api/${CONTROLLER_NAME}/CreateNhanVien`, params);
+      return result.data;
+  } catch (error) {
+      throw error;
+  }
+};
 const createXuatNhapKho = async (params) => {
   try {
       const result = await axios.post(`https://localhost:7183/api/${CONTROLLER_NAME}/CreateXuatNhapKho`, params, {
@@ -242,9 +284,9 @@ const getPhanCongCongViecByNhanVien = async (nhanVienId) => {
   }
 };
 
-const getAllLinhKienSuaChua = async () => {
+const getAllLinhKienSuaChua = async (thietBiSuaChuaId) => {
   try {
-    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllLinhKienSuaChua`);
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllLinhKienSuaChua?thietBiSuaChuaId=${thietBiSuaChuaId}`);
     return result;
   } catch (error) {
     throw error;
@@ -268,8 +310,60 @@ const getPhanCongCongViecById = async (id) => {
     throw error;
   }
 };
+const getUserById = async (id) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetUserById/${id}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
 
+const deleteUser = async (id) => {
+  try {
+    const result = await axios.delete(`https://localhost:7183/api/${CONTROLLER_NAME}/DeleteUser/${id}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const updatePhanCongCongViec = async (params) => {
+  try {
+      const result = await axios.put(`https://localhost:7183/api/${CONTROLLER_NAME}/UpdatePhanCongCongViec`, params, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${authorization}`,
+        }
+      });
+      return result.data;
+  } catch (error) {
+      throw error;
+  }
+};
+const getAllLichSuSuaChua = async (khachHangId) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllLichSuSuaChua?khachHangId=${khachHangId}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getAllHieuSuat = async (userId) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllHieuSuat?userId=${userId}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
 export const DeviceApi = {
+  getAllHieuSuat,
+  getUserById,
+  deleteUser,
+  createNhanVien,
+  getAllLichSuSuaChua,
   getAllLinhKien,
   getAllLinhKienSuaChua,
   createThietBi,
@@ -278,6 +372,7 @@ export const DeviceApi = {
   createLoaiThietBi,
   getAllLoaiThietBis,
   getLoaiThietBiById,
+  xoaLinhKienSuaChua,
   getAllThietBiOfCustomer, createPhanCongCongViec,createThietBiSuaChua, createXuatNhapKho,updateLinhKienSuaChua,
   updatePhanCongCongViec,
   updateThietBi,
@@ -289,5 +384,8 @@ export const DeviceApi = {
   getThietBiSuaChuaById,
   getPhanCongCongViecByNhanVien,
   createLinhKienSuaChua,
-  getPhanCongCongViecById
+  getPhanCongCongViecById,
+  createLinhKien,
+  updateLinhKien,
+  xoaLinhKien
 }

@@ -89,7 +89,10 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<int>("HoaDonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ThietBiId")
+                    b.Property<int?>("ThietBiId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");
 
                     b.Property<double>("UnitPrice")
@@ -521,7 +524,7 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<double>("GiaBan")
                         .HasColumnType("float");
 
-                    b.Property<double>("GiaNhap")
+                    b.Property<double?>("GiaNhap")
                         .HasColumnType("float");
 
                     b.Property<string>("ImageUrl")
@@ -646,9 +649,8 @@ namespace RepairManagement.Infrastructure.Migrations
                     b.Property<int>("NguoiDungId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<int>("ThietBiSuaChuaId")
                         .HasColumnType("int");
@@ -927,15 +929,11 @@ namespace RepairManagement.Infrastructure.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("RepairManagement.Domain.Entities.ThietBi", "ThietBi")
+                    b.HasOne("RepairManagement.Domain.Entities.ThietBi", null)
                         .WithMany("ChiTietHoaDons")
-                        .HasForeignKey("ThietBiId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ThietBiId");
 
                     b.Navigation("HoaDon");
-
-                    b.Navigation("ThietBi");
                 });
 
             modelBuilder.Entity("RepairManagement.Domain.Entities.ConfirmEmail", b =>

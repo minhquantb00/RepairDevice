@@ -16,5 +16,6 @@ namespace RepairManagement.Application.Payloads.Responses.Device
         public double GiaBan { get; set; }
         public string MoTa { get; set; }
         public string? ImageUrl { get; set; }
+        public int SoLuong { get; set; }
     }
 }

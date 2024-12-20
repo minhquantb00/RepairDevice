@@ -23,9 +23,6 @@ const updateCustomer = ref({
 const emit = defineEmits(["submit", "update:isDialogVisible"]);
 const customerData = ref(structuredClone(toRaw(props.customerData)));
 
-watch(props, () => {
-  updateCustomer.value = structuredClone(toRaw(updateCustomer.value));
-});
 
 const onFormSubmit = () => {
 
@@ -107,20 +104,20 @@ const onClickButtonSubmit = async () => {
           <VRow>
             <!-- 👉 First Name -->
             <VCol cols="12">
-              <AppTextField v-model="updateDepartment.hoVaTen" label="Họ và tên" />
+              <AppTextField v-model="updateCustomer.hoVaTen" label="Họ và tên" />
             </VCol>
 
             <!-- 👉 Last Name -->
             <VCol cols="12">
-              <AppTextField v-model="updateDepartment.soDienThoai" label="Số điện thoại" />
+              <AppTextField v-model="updateCustomer.soDienThoai" label="Số điện thoại" />
             </VCol>
 
             <VCol cols="12">
-              <AppTextField v-model="updateDepartment.email" label="Email" />
+              <AppTextField v-model="updateCustomer.email" label="Email" />
             </VCol>
 
             <VCol cols="12">
-              <AppTextField v-model="updateDepartment.diaChi" label="Địa chỉ" />
+              <AppTextField v-model="updateCustomer.diaChi" label="Địa chỉ" />
             </VCol>
 
 

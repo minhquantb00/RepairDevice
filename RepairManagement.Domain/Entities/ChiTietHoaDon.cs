@@ -11,8 +11,7 @@ namespace RepairManagement.Domain.Entities
     {
         public int HoaDonId { get; set; }
         public virtual HoaDon? HoaDon { get; set; }
-        public int ThietBiId { get; set; }
-        public virtual ThietBi? ThietBi { get; set; }
+        public int ThietBiSuaChuaId { get; set; }
         public string Description { get; set; }
         public double UnitPrice { get; set; }
     }

@@ -5,28 +5,35 @@
 namespace RepairManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initialv4 : Migration
+    public partial class inivv4 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_KhachHangs_NguoiDungs_NguoiDungId",
-                table: "KhachHangs");
+                name: "FK_ChiTietHoaDons_ThietBi_ThietBiId",
+                table: "ChiTietHoaDons");
 
             migrationBuilder.AlterColumn<int>(
-                name: "NguoiDungId",
-                table: "KhachHangs",
+                name: "ThietBiId",
+                table: "ChiTietHoaDons",
                 type: "int",
                 nullable: true,
                 oldClrType: typeof(int),
                 oldType: "int");
 
+            migrationBuilder.AddColumn<int>(
+                name: "ThietBiSuaChuaId",
+                table: "ChiTietHoaDons",
+                type: "int",
+                nullable: false,
+                defaultValue: 0);
+
             migrationBuilder.AddForeignKey(
-                name: "FK_KhachHangs_NguoiDungs_NguoiDungId",
-                table: "KhachHangs",
-                column: "NguoiDungId",
-                principalTable: "NguoiDungs",
+                name: "FK_ChiTietHoaDons_ThietBi_ThietBiId",
+                table: "ChiTietHoaDons",
+                column: "ThietBiId",
+                principalTable: "ThietBi",
                 principalColumn: "Id");
         }
 
@@ -34,12 +41,16 @@ namespace RepairManagement.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropForeignKey(
-                name: "FK_KhachHangs_NguoiDungs_NguoiDungId",
-                table: "KhachHangs");
+                name: "FK_ChiTietHoaDons_ThietBi_ThietBiId",
+                table: "ChiTietHoaDons");
+
+            migrationBuilder.DropColumn(
+                name: "ThietBiSuaChuaId",
+                table: "ChiTietHoaDons");
 
             migrationBuilder.AlterColumn<int>(
-                name: "NguoiDungId",
-                table: "KhachHangs",
+                name: "ThietBiId",
+                table: "ChiTietHoaDons",
                 type: "int",
                 nullable: false,
                 defaultValue: 0,
@@ -48,10 +59,10 @@ namespace RepairManagement.Infrastructure.Migrations
                 oldNullable: true);
 
             migrationBuilder.AddForeignKey(
-                name: "FK_KhachHangs_NguoiDungs_NguoiDungId",
-                table: "KhachHangs",
-                column: "NguoiDungId",
-                principalTable: "NguoiDungs",
+                name: "FK_ChiTietHoaDons_ThietBi_ThietBiId",
+                table: "ChiTietHoaDons",
+                column: "ThietBiId",
+                principalTable: "ThietBi",
                 principalColumn: "Id",
                 onDelete: ReferentialAction.Cascade);
         }

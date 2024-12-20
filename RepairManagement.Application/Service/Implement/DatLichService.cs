@@ -33,6 +33,26 @@ namespace RepairManagement.Application.Service.Implement
             var currentUser = _httpContextAccessor.HttpContext.User;
             if(!currentUser.Identity.IsAuthenticated)
             {
+                var checkEmail = await _khachHangRepository.GetAsync(item => item.Email.Equals(request.Email));
+                if(checkEmail != null)
+                {
+                    return new ResponseObject<DataResponseDatLich>
+                    {
+                        Data = null,
+                        Message = "Email đã tồn tại trong hệ thống vui lòng thử email khác hoặc đăng nhập tài khoản để đặt lịch",
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                }
+                var checkPhoneNumber = await _khachHangRepository.GetAsync(item => item.SoDienThoai.Equals(request.SoDienThoai));
+                if (checkPhoneNumber != null)
+                {
+                    return new ResponseObject<DataResponseDatLich>
+                    {
+                        Data = null,
+                        Message = "Số điện thoại đã tồn tại trong hệ thống vui lòng thử số điện thoại khác hoặc đăng nhập tài khoản để đặt lịch",
+                        Status = StatusCodes.Status400BadRequest
+                    };
+                }
                 KhachHang khachHang = new KhachHang
                 {
                     IsActive = true,
@@ -59,7 +79,7 @@ namespace RepairManagement.Application.Service.Implement
                     DiaChi = request.DiaChi,
                     DichVuId = request.DichVuId,
                     Email = request.Email,
-                    HoVaTen = request.Email,
+                    HoVaTen = request.HoVaTen,
                     MoTa = request.MoTa,
                     SoDienThoai = request.SoDienThoai,
                     TenThietBi = request.TenThietBi,

@@ -83,11 +83,11 @@ const headers = [
     title: "Trạng thái",
     key: "status"
   },
-  {
-    title: "Actions",
-    key: "actions",
-    sortable: false,
-  },
+  // {
+  //   title: "Actions",
+  //   key: "actions",
+  //   sortable: false,
+  // },
 ];
 watch(
   () => options.value.page,
@@ -269,7 +269,7 @@ onMounted(async () => {
 
 
         <!-- Actions -->
-        <template #item.actions="{ item }">
+        <!-- <template #item.actions="{ item }">
           <IconBtn >
             <VIcon icon="tabler-settings-check" />
           </IconBtn>
@@ -277,7 +277,7 @@ onMounted(async () => {
           <IconBtn>
             <VIcon icon="tabler-trash" />
           </IconBtn>
-        </template>
+        </template> -->
 
         <!-- pagination -->
 

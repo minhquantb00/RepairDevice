@@ -1,4 +1,5 @@
 ﻿using RepairManagement.Commons.Base;
+using RepairManagement.Commons.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,6 @@ namespace RepairManagement.Domain.Entities
         public DateTime ThoiGianPhanCong {  get; set; }
         public DateTime? ThoiGianHoanThanh {  get; set; }
         public string GhiChu {  get; set; }
-        public string Status { get; set; }
+        public Enumerate.ThietBiSuaChuaStatus Status { get; set; } = Enumerate.ThietBiSuaChuaStatus.DangSua;
     }
 }

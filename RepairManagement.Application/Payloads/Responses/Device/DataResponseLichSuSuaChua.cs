@@ -16,5 +16,6 @@ namespace RepairManagement.Application.Payloads.Responses.Device
         public string GhiChu { get; set; }
         public string Status { get; set; }
         public string NhanVienSua { get; set; }
+        public string TenThietBi { get; set; }
     }
 }

@@ -59,7 +59,26 @@ namespace RepairManagement.Application.Service.Implement
                     Status = StatusCodes.Status403Forbidden
                 };
             }
-
+            var checkEmail = await _khachHangRepository.GetAsync(item => item.Email.Equals(request.Email));
+            if (checkEmail != null)
+            {
+                return new ResponseObject<DataResponseKhachHang>
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Data = null,
+                    Message = "Email đã tồn tại trên hệ thống! Vui lòng thử lại"
+                };
+            }
+            var checkPhoneNumber = await _khachHangRepository.GetAsync(item => item.SoDienThoai.Equals(request.SoDienThoai));
+            if (checkPhoneNumber != null)
+            {
+                return new ResponseObject<DataResponseKhachHang>
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Data = null,
+                    Message = "Số điện thoại đã tồn tại trên hệ thống! Vui lòng thử lại"
+                };
+            }
             KhachHang khachHang = new KhachHang
             {
                 IsActive = true,

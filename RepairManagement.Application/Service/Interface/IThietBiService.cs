@@ -1,4 +1,6 @@
-﻿using RepairManagement.Application.Payloads.Requests.Device;
+﻿using Microsoft.AspNetCore.Http;
+using RepairManagement.Application.Payloads.Requests.Auth;
+using RepairManagement.Application.Payloads.Requests.Device;
 using RepairManagement.Application.Payloads.ResponseDatas;
 using RepairManagement.Application.Payloads.Responses.Device;
 using RepairManagement.Application.Payloads.Responses.User;
@@ -31,8 +33,23 @@ namespace RepairManagement.Application.Service.Interface
         Task<IQueryable<DataResponseUser>> GetAllUser(string? keyword);
         Task<DataResponseThietBiSuaChua> GetThietBiSuaChuaById(int id);
         Task<IQueryable<DataResponsePhanCongCongViec>> GetPhanCongCongViecByNhanVien(int nhanVienId);
-        Task<IQueryable<DataResponseLinhKienSuaChua>> GetAllLinhKienSuaChua();
+        Task<IQueryable<DataResponseLinhKienSuaChua>> GetAllLinhKienSuaChua(int thietBiSuaChuaId);
         Task<IQueryable<DataResponseLinhKien>> GetAllLinhKien();
         Task<DataResponsePhanCongCongViec> GetPhanCongCongViecById(int id);
+        Task<IQueryable<DataResponseLichSuSuaChua>> GetAllLichSuSuaChua(int khachHangId);
+        Task<ResponseObject<DataResponseLinhKien>> CreateLinhKien(Request_CreateLinhKien request);
+        Task<ResponseObject<DataResponseLinhKien>> UpdateLinhKien(Request_UpdateLinhKien request);
+        Task<ResponseObject<DataResponseLinhKien>> XoaLinhKien(int id); 
+        Task<ResponseObject<DataResponseUser>> CreateNhanVien(Request_register request);
+        Task<ResponseObject<DataResponseLinhKienSuaChua>> XoaLinhKienSuaChua(int id);
+        Task<DataResponseUser> GetUserById(int id);
+        Task<ResponseObject<DataResponseUser>> DeleteUser(int id);
+        Task<IQueryable<DataResponseHieuSuatNhanVien>> GetAllHieuSuat(int userId);
+        Task<IQueryable<DataResponsePhanCongCongViec>> GetPhanCongCongViecChoXuLyBy();
+        Task<IQueryable<DataResponsePhanCongCongViec>> GetPhanCongCongViecDangXuLy();
+        Task<IQueryable<DataResponsePhanCongCongViec>> GetPhanCongCongViecDaHoanThanh();
+        Task<ResponseObject<string>> CreateUrlPayment(int billId, HttpContext httpContext);
+        Task<string> VnPayReturn(IQueryCollection vnpayData);
+        Task<ResponseObject<DataResponseHoaDon>> CreateHoaDon(Request_CreateHoaDon request);
     }
 }

@@ -11,7 +11,7 @@ namespace RepairManagement.Domain.Entities
     {
         public string TenLinhKien {  get; set; }
         public string LoaiLinhKien { get; set; }
-        public double GiaNhap { get; set; }
+        public double? GiaNhap { get; set; }
         public double GiaBan { get; set; }
         public string MoTa {  get; set; }
         public string? ImageUrl { get; set; }

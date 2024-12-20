@@ -87,11 +87,6 @@ const headers = [
     title: "Trạng thái",
     key: "status"
   },
-  {
-    title: "Actions",
-    key: "actions",
-    sortable: false,
-  },
 ];
 watch(
   () => options.value.page,
@@ -283,16 +278,6 @@ onMounted(async () => {
         </template>
 
 
-        <!-- Actions -->
-        <template #item.actions="{ item }">
-          <IconBtn >
-            <VIcon icon="tabler-settings-check" />
-          </IconBtn>
-
-          <IconBtn>
-            <VIcon icon="tabler-trash" />
-          </IconBtn>
-        </template>
 
         <!-- pagination -->
 

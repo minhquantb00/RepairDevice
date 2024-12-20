@@ -1,93 +1,71 @@
 <script setup>
+import { ThietBiSuaChuaStatus } from "@/enums/enumerate"; // Đảm bảo import enum nếu bạn đang dùng TypeScript
+import {DeviceApi} from "@/apis/device/deviceApi"
+// Dữ liệu mẫu để minh họa
 const props = defineProps({
   userData: {
     type: Object,
     required: true,
   },
 })
-const notifications = ref([
-  {
-    type: 'New for you',
-    email: true,
-    browser: false,
-    app: false,
-  },
-  {
-    type: 'Account activity',
-    email: false,
-    browser: true,
-    app: true,
-  },
-  {
-    type: 'A new browser used to sign in',
-    email: true,
-    browser: true,
-    app: true,
-  },
-  {
-    type: 'A new device is linked',
-    email: false,
-    browser: true,
-    app: false,
-  },
-])
+const repairs = ref([]);
+
+const getStatus = (status) => {
+  switch (status) {
+    case ThietBiSuaChuaStatus.ChuaSua:
+      return "Chưa sửa";
+    case ThietBiSuaChuaStatus.DangSua:
+      return "Đang sửa";
+    case ThietBiSuaChuaStatus.HoanThanh:
+      return "Hoàn thành";
+    default:
+      return "Không xác định";
+  }
+};
+
+const getAllLichSuSuaChua = async () => {
+  const result = await DeviceApi.getAllLichSuSuaChua(props.userData.id);
+  repairs.value = result.data;
+}
+
+onMounted(async () => {
+  await getAllLichSuSuaChua();
+})
 </script>
 
 <template>
-  <VCard class="user-tab-notification">
+  <VCard class="user-tab-repairs">
     <VCardItem>
-      <VCardTitle>Notifications</VCardTitle>
+      <VCardTitle>Lịch sử sửa chữa</VCardTitle>
       <p class="text-base mt-2 mb-0">
-        You will receive notification for the below selected items.
+        Thông tin lịch sử sửa chữa của khách hàng tại đây
       </p>
     </VCardItem>
     <VCardText>
       <VTable class="border rounded text-no-wrap">
         <thead>
           <tr>
-            <th scope="col">
-              TYPE
-            </th>
-            <th scope="col">
-              EMAIL
-            </th>
-            <th scope="col">
-              BROWSER
-            </th>
-            <th scope="col">
-              APP
-            </th>
+            <th scope="col">Tên thiết bị</th>
+            <th scope="col">Chưa sửa</th>
+            <th scope="col">Đang sửa</th>
+            <th scope="col">Hoàn thành</th>
           </tr>
         </thead>
-
         <tbody>
-          <tr
-            v-for="notification in notifications"
-            :key="notification.type"
-          >
-            <td>{{ notification.type }}</td>
+          <tr  v-for="repair in repairs" :key="repair.id">
+            <td>{{ repair.tenThietBi }}</td>
             <td>
-              <VCheckbox v-model="notification.email" />
+              <VCheckbox v-model="repair.status" :true-value="ThietBiSuaChuaStatus.ChuaSua" :false-value="null" disabled />
             </td>
             <td>
-              <VCheckbox v-model="notification.browser" />
+              <VCheckbox v-model="repair.status" :true-value="ThietBiSuaChuaStatus.DangSua" :false-value="null" disabled />
             </td>
             <td>
-              <VCheckbox v-model="notification.app" />
+              <VCheckbox v-model="repair.status" :true-value="ThietBiSuaChuaStatus.HoanThanh" :false-value="null" disabled />
             </td>
           </tr>
         </tbody>
       </VTable>
-    </VCardText>
-
-    <VCardText class="d-flex flex-wrap gap-4">
-      <VBtn>Save changes</VBtn>
-      <VBtn
-        color="secondary"
-        variant="tonal"
-      >
-        Discard
-      </VBtn>
     </VCardText>
   </VCard>
 </template>

@@ -3,7 +3,7 @@ import avatar1 from '@images/avatars/avatar-1.png'
 import {useRouter} from "vue-router"
 
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
-
+const router = useRouter();
 const logOut = () => {
   localStorage.removeItem('accessToken');
   localStorage.removeItem('refreshToken');
