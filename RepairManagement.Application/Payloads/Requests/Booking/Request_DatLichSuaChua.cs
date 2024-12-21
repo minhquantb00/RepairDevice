@@ -15,6 +15,7 @@ namespace RepairManagement.Application.Payloads.Requests.Booking
         public string DiaChi { get; set; }
         public int DichVuId { get; set; }
         public DateTime ThoiGianDat { get; set; }
+        public string GioDat {  get; set; }
         public string MoTa { get; set; }
         public string TenThietBi { get; set; }
     }

@@ -20,6 +20,7 @@ const businessExecute = ref({
   thoiGianDat: null,
   moTa: "",
   tenThietBi: "",
+  gioDat: null,
 });
 const getAllServices = async () => {
   const result = await ServiceApi.getAllServices();
@@ -64,6 +65,11 @@ const isCPasswordVisible = ref(false);
 
 const datLichSuaChua = async () => {
   loading.value = false;
+  if (!businessExecute.value.gioDat) {
+    toast("Bạn cần chọn Giờ sửa!", { type: "error" });
+    return;
+  }
+
   const result = await BookingApi.datLichSuaChua(businessExecute.value);
   if (result.status === 200) {
     toast(result.message, {
@@ -91,9 +97,8 @@ const onSubmitForm = () => {
   });
 };
 onMounted(async () => {
-
   await getAllServices();
-  console.log(listService.value)
+  console.log(listService.value);
 });
 </script>
 
@@ -125,7 +130,7 @@ onMounted(async () => {
 
               <VCol cols="12" md="6">
                 <AppSelect
-                ref="select"
+                  ref="select"
                   v-model="businessExecute.dichVuId"
                   item-title="tenDichVu"
                   item-value="id"
@@ -143,6 +148,24 @@ onMounted(async () => {
                   label="Ngày sửa"
                   placeholder="YYYY-MM-DD"
                 />
+              </VCol>
+              <VCol cols="12" md="6">
+                <div>
+              <label style="font-size: 13px;">Giờ sửa</label>
+              <div class="form-floating" style="border: 1px grey solid; padding: 7px 8px; border-radius: 8px; margin-top: 4px">
+                <input
+                  type="time"
+                  class="form-control"
+                  id="timeInput"
+                  name="time"
+                  style="padding: 0  20px !important; width: 100%"
+                  placeholder="Giờ sửa"
+                  step="3600"
+                  v-model="businessExecute.gioDat"
+                />
+
+              </div>
+              </div>
               </VCol>
               <VCol cols="12" md="6">
                 <AppTextField

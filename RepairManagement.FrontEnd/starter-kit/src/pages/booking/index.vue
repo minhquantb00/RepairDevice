@@ -11,7 +11,7 @@ const invoices = ref([]);
 const selectedRows = ref([]);
 const name = ref("");
 const email = ref("");
-const loading = ref(false)
+const loading = ref(false);
 const allServices = ref([]);
 const businessExecute = ref({
   hoVaTen: "",
@@ -22,6 +22,7 @@ const businessExecute = ref({
   thoiGianDat: null,
   moTa: "",
   tenThietBi: "",
+  gioDat: null,
 });
 
 const getAllServices = async () => {
@@ -59,6 +60,11 @@ const isLoading = ref(false);
 
 const datLichSuaChua = async () => {
   loading.value = false;
+  if (!businessExecute.value.gioDat) {
+    toast("Bạn cần chọn Giờ sửa!", { type: "error" });
+    return;
+  }
+
   const result = await BookingApi.datLichSuaChua(businessExecute.value);
   if (result.status === 200) {
     toast(result.message, {
@@ -136,7 +142,7 @@ onMounted(async () => {
               <!-- Select Service -->
               <div class="form-floating modal__booking-select">
                 <AppSelect
-                ref="select"
+                  ref="select"
                   v-model="businessExecute.dichVuId"
                   item-title="tenDichVu"
                   item-value="id"
@@ -199,6 +205,23 @@ onMounted(async () => {
                   placeholder="YYYY-MM-DD"
                 />
                 <span id="DateTime-Address" class="text-danger"> </span>
+              </div>
+
+              <div style="margin-top:20px">
+              <label style="font-size: 13px">Giờ sửa</label>
+              <div class="form-floating" >
+                <input
+                  type="time"
+                  class="form-control"
+                  id="timeInput"
+                  name="time"
+                  style="padding: 0  20px !important"
+                  placeholder="Giờ sửa"
+                  step="3600"
+                  v-model="businessExecute.gioDat"
+                />
+
+              </div>
               </div>
 
               <!-- Note -->

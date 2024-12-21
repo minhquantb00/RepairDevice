@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using RepairManagement.Application.Handle.Email;
 using RepairManagement.Application.Payloads.Converters;
 using RepairManagement.Application.Payloads.Requests.Booking;
 using RepairManagement.Application.Payloads.ResponseDatas;
@@ -20,12 +21,14 @@ namespace RepairManagement.Application.Service.Implement
         private readonly DatLichConverter _datLichConverter;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly IRepository<KhachHang> _khachHangRepository;
-        public DatLichService(IRepository<DatLichSuaChua> datLichSuaChuaRepository, DatLichConverter datLichConverter, IHttpContextAccessor httpContextAccessor, IRepository<KhachHang> khachHangRepository)
+        private readonly IEmailService _emailService;
+        public DatLichService(IRepository<DatLichSuaChua> datLichSuaChuaRepository, DatLichConverter datLichConverter, IHttpContextAccessor httpContextAccessor, IRepository<KhachHang> khachHangRepository, IEmailService emailService)
         {
             _datLichSuaChuaRepository = datLichSuaChuaRepository;
             _datLichConverter = datLichConverter;
             _httpContextAccessor = httpContextAccessor;
             _khachHangRepository = khachHangRepository;
+            _emailService = emailService;
         }
 
         public async Task<ResponseObject<DataResponseDatLich>> DatLichSuaChua(Request_DatLichSuaChua request)
@@ -64,13 +67,24 @@ namespace RepairManagement.Application.Service.Implement
                     SoDienThoai = request.SoDienThoai,
                 };
                 khachHang = await _khachHangRepository.CreateAsync(khachHang);
-                if(request.ThoiGianDat < DateTime.Now)
+                var thoiGianDat = request.ThoiGianDat + TimeSpan.Parse(request.GioDat);
+                if(thoiGianDat < DateTime.Now)
                 {
                     return new ResponseObject<DataResponseDatLich>
                     {
                         Data = null,
                         Message = "Bạn cần đặt lịch ít nhất là sau ngày hôm nay",
                         Status = StatusCodes.Status400BadRequest
+                    };
+                }
+                var datLichCheck = await _datLichSuaChuaRepository.GetAsync(item => item.ThoiGianDat == thoiGianDat && item.KhachHangId == khachHang.Id);
+                if(datLichCheck != null)
+                {
+                    return new ResponseObject<DataResponseDatLich>
+                    {
+                        Status = StatusCodes.Status400BadRequest,
+                        Data = null,
+                        Message = "Trùng lịch vui lòng thử lại"
                     };
                 }
                 DatLichSuaChua item = new DatLichSuaChua
@@ -86,6 +100,9 @@ namespace RepairManagement.Application.Service.Implement
                     ThoiGianDat = request.ThoiGianDat,
                 };
                 item = await _datLichSuaChuaRepository.CreateAsync(item);
+
+                var messageitem = new Request_Message(new string[] { khachHang.Email }, "Thông tin đặt lịch: ", $"Thông đặt lịch của bạn đã được ghi nhận.");
+                _emailService.SendEmail(messageitem);
                 return new ResponseObject<DataResponseDatLich>
                 {
                     Data = _datLichConverter.EntityToDTO(item),
@@ -104,13 +121,24 @@ namespace RepairManagement.Application.Service.Implement
                     Status = StatusCodes.Status404NotFound
                 };
             }
-            if (request.ThoiGianDat < DateTime.Now)
+            var thoiGianDatTime = request.ThoiGianDat + TimeSpan.Parse(request.GioDat);
+            if (thoiGianDatTime < DateTime.Now)
             {
                 return new ResponseObject<DataResponseDatLich>
                 {
                     Data = null,
                     Message = "Bạn cần đặt lịch ít nhất là sau ngày hôm nay",
                     Status = StatusCodes.Status400BadRequest
+                };
+            }
+            var datLichCheckItem = await _datLichSuaChuaRepository.GetAsync(item => item.ThoiGianDat == thoiGianDatTime && item.KhachHangId == khachHangItem.Id);
+            if (datLichCheckItem != null)
+            {
+                return new ResponseObject<DataResponseDatLich>
+                {
+                    Status = StatusCodes.Status400BadRequest,
+                    Data = null,
+                    Message = "Trùng lịch vui lòng thử lại"
                 };
             }
             DatLichSuaChua datLich = new DatLichSuaChua
@@ -127,6 +155,8 @@ namespace RepairManagement.Application.Service.Implement
                 ThoiGianDat = request.ThoiGianDat,
             };
             datLich = await _datLichSuaChuaRepository.CreateAsync(datLich);
+            var message = new Request_Message(new string[] { khachHangItem.Email }, "Thông tin đặt lịch: ", $"Thông đặt lịch của bạn đã được ghi nhận.");
+            _emailService.SendEmail(message);
             return new ResponseObject<DataResponseDatLich>
             {
                 Data = _datLichConverter.EntityToDTO(datLich),
