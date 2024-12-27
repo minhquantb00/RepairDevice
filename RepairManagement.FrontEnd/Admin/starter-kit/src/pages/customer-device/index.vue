@@ -99,7 +99,7 @@ const getAllThietBiOfCustomer = async () => {
   isLoading.value = true;
   listDevice.value = result.data;
     invoices.value = result.data;
-    totalInvoices.value = result.length;
+    totalInvoices.value = result.data.length;
 };
 
 const paginatedData = computed(() => {

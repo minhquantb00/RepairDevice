@@ -20,5 +20,6 @@ namespace RepairManagement.Application.Service.Interface
         Task ChangePassword(Request_ChangePassword request);
         Task ForgotPassword(Request_ForgotPassword request);
         Task ConfirmCreateNewPassword(Request_ConfirmCreateNewPassword request);
+        Task<DataResponseKhachHang> GetKhachHangByUserId(int userId);
     }
 }

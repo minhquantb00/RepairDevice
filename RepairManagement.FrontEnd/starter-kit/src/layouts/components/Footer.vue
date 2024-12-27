@@ -407,6 +407,12 @@
           /></a>
         </div>
       </div>
+      <df-messenger
+  intent="WELCOME"
+  chat-title="Repair"
+  agent-id="ea676071-f3ab-40cf-bc9b-7745d80fa993"
+  language-code="vi"
+></df-messenger>
     </div>
 
     <div class="tags-ft container"></div>

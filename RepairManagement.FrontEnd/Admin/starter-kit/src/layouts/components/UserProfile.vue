@@ -1,14 +1,14 @@
 <script setup>
 import avatar1 from '@images/avatars/avatar-1.png'
-import {AuthApi} from "@/apis/auth/authApi"
+import {DeviceApi} from "@/apis/device/deviceApi"
 import {ref, onMounted, computed} from "vue"
 import {useRouter} from "vue-router"
 const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 const router = useRouter();
 const user = ref({})
 const getUserById = async () => {
-  const result = userInfo !== null ? await AuthApi.getUserById(userInfo.Id) : {};
-  user.value = result;
+  const result = userInfo !== null ? await DeviceApi.getUserById(userInfo.Id) : {};
+  user.value = result.data;
 }
 
 const logOut = () => {
@@ -16,7 +16,13 @@ const logOut = () => {
   localStorage.removeItem('accessToken')
   localStorage.removeItem('refreshToken');
   router.push({path: '/login'})
+
 }
+
+
+onMounted(async () => {
+  await getUserById();
+})
 </script>
 
 <template>
@@ -65,9 +71,9 @@ const logOut = () => {
             </template>
 
             <VListItemTitle class="font-weight-semibold">
-              John Doe
+              {{user.hoVaTen}}
             </VListItemTitle>
-            <VListItemSubtitle>Admin</VListItemSubtitle>
+            <VListItemSubtitle>{{user.email}}</VListItemSubtitle>
           </VListItem>
 
           <VDivider class="my-2" />
@@ -82,47 +88,9 @@ const logOut = () => {
               />
             </template>
 
-            <VListItemTitle>Profile</VListItemTitle>
+            <VListItemTitle>Trang cá nhân</VListItemTitle>
           </VListItem>
 
-          <!-- 👉 Settings -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-settings"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Settings</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 Pricing -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-currency-dollar"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Pricing</VListItemTitle>
-          </VListItem>
-
-          <!-- 👉 FAQ -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-help"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>FAQ</VListItemTitle>
-          </VListItem>
 
           <!-- Divider -->
           <VDivider class="my-2" />
@@ -137,7 +105,7 @@ const logOut = () => {
               />
             </template>
 
-            <VListItemTitle>Logout</VListItemTitle>
+            <VListItemTitle>Đăng xuất</VListItemTitle>
           </VListItem>
         </VList>
       </VMenu>

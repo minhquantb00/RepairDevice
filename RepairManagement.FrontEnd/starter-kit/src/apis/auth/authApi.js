@@ -43,6 +43,15 @@ const confirmCreateNewPassword = async (params) => {
   }
 };
 
+const getKhachHangByUserId = async (userId) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetKhachHangByUserId?userId=${userId}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const changePassword = async (params) => {
   try {
     const result = await axiosIns.put(`${CONTROLLER_NAME}/ChangePassword`, params, {
@@ -62,4 +71,5 @@ export const AuthApi = {
   forgotPassword,
   confirmCreateNewPassword,
   changePassword,
+  getKhachHangByUserId
 }

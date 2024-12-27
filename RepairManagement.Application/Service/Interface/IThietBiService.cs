@@ -51,5 +51,8 @@ namespace RepairManagement.Application.Service.Interface
         Task<ResponseObject<string>> CreateUrlPayment(int billId, HttpContext httpContext);
         Task<string> VnPayReturn(IQueryCollection vnpayData);
         Task<ResponseObject<DataResponseHoaDon>> CreateHoaDon(Request_CreateHoaDon request);
+        Task<IQueryable<DataResponseThongBao>> GetAllThongBaoByKhachHang(int khachHangId);
+        Task<DataResponseGetDataLinhKien> GetDataLinhKien(int billId);
+        Task<DataResponseGetDataLinhKien> GetDataLinhKienByNguoiDung(int nguoiDungId);
     }
 }

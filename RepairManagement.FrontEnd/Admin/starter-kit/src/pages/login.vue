@@ -41,6 +41,7 @@ const login = async () => {
   loading.value = true;
   console.log(businessExecute.value);
   const result = await AuthApi.login(businessExecute.value);
+  console.log(result);
   if (result.status === 200) {
     const decode = parseJwt(result.data.accessToken);
     localStorage.setItem(LocalStorageKey.ACCESS_TOKEN, result.data.accessToken);

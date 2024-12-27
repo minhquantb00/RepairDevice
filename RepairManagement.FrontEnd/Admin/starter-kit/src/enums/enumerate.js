@@ -17,3 +17,9 @@ export const ThietBiSuaChuaStatus = {
   ChuaSua: "ChuaSua",
   HoanThanh: "HoanThanh"
 }
+
+export const RoleEnum = {
+  Admin: "Admin",
+  Employee: "Employee",
+  Customer: "Customer"
+}

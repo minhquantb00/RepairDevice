@@ -251,11 +251,27 @@ namespace RepairManagement.Api.Controllers
             var vnpayData = HttpContext.Request.Query;
             return Ok(await _thietBiService.VnPayReturn(vnpayData));
         }
+        [HttpGet]
+        public async Task<IActionResult> GetAllThongBaoByKhachHang([FromQuery]int khachHangId)
+        {
+            return Ok(await _thietBiService.GetAllThongBaoByKhachHang(khachHangId));
+        }
+
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> CreateHoaDon(Request_CreateHoaDon request)
         {
             return Ok(await _thietBiService.CreateHoaDon(request));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetDataLinhKien([FromQuery] int billId)
+        {
+            return Ok(await _thietBiService.GetDataLinhKien(billId));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetDataLinhKienByNguoiDung([FromQuery] int nguoiDungId)
+        {
+            return Ok(await _thietBiService.GetDataLinhKienByNguoiDung(nguoiDungId));
         }
     }
 }

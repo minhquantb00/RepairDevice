@@ -13,8 +13,9 @@ const props = defineProps({
     required: true,
   },
 });
-const userInfo = JSON.parse(localStorage.getItem('userInfo'))
+const userInfo = JSON.parse(localStorage.getItem("userInfo"));
 const loading = ref(false);
+const dataLinhKien = ref({});
 const businessExecuteBill = ref({
   createChiTietHoaDons: [],
 });
@@ -26,7 +27,10 @@ const businessExecuteVnPay = ref({
 });
 const emit = defineEmits(["update:currentStep", "update:checkout-data"]);
 const listDevice = ref([]);
-
+const getDataLinhKien = async () => {
+  const result = await DeviceApi.getDataLinhKienByNguoiDung(userInfo.Id);
+dataLinhKien.value = result.data;
+}
 const getAllListDevice = async () => {
   const result = await DeviceApi.getPhanCongCongViecDaHoanThanh();
   listDevice.value = result.data;
@@ -42,6 +46,16 @@ const createBill = async () => {
       dangerouslyHTMLString: true,
     });
     router.push("/login");
+    return;
+  }
+  if (listDevice.value == null || listDevice == undefined) {
+    toast("Cần có thiết bị cần thanh toán", {
+      type: "error",
+      transition: "flip",
+      theme: "dark",
+      autoClose: 1500,
+      dangerouslyHTMLString: true,
+    });
     return;
   }
   console.log(listDevice.value);
@@ -114,21 +128,77 @@ const totalCost = computed(() => {
 const updateCartData = () => {
   emit("update:checkout-data", checkoutCartDataLocal.value);
 };
-
+const formatCurrency = (value) => {
+  return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+}
 const nextStep = () => {
   updateCartData();
   emit("update:currentStep", props.currentStep ? props.currentStep + 1 : 1);
 };
+const printInvoice = () => {
+  const printContent = document.querySelector("#printSection");
+  if (!printContent) {
+    console.error("Không tìm thấy nội dung để in");
+    return;
+  }
+
+  const printWindow = window.open("", "_blank");
+  if (!printWindow) {
+    console.error("Không thể mở cửa sổ in");
+    return;
+  }
+
+  // printWindow.document.open();
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Hóa đơn</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+          }
+          .text-primary {
+            color: #007bff;
+          }
+          .text-high-emphasis {
+            font-weight: bold;
+          }
+          .no-print {
+            display: none !important;
+          }
+        </style>
+      </head>
+      <body>
+        ${printContent.innerHTML}
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+
+  printWindow.onload = () => {
+    printWindow.focus();
+    printWindow.print();
+    setTimeout(() => {
+      printWindow.close();
+    }, 1000); // Đóng cửa sổ sau 1 giây
+  };
+};
+
 
 watch(() => props.currentStep, updateCartData);
 onMounted(async () => {
   await getAllListDevice();
+  console.log(listDevice.value);
+  if(userInfo && listDevice.value != null && listDevice.value != undefined && listDevice.value.length != 0){
+    await getDataLinhKien();
+  }
 });
 </script>
 
 <template>
-  <VRow>
-    <VCol cols="12" md="8">
+  <VRow id="printSection">
+    <VCol cols="12" md="8" >
       <h6 class="text-h6 my-4">
         Các thiết bị của bạn ({{ listDevice.length }} thiết bị)
       </h6>
@@ -140,7 +210,7 @@ onMounted(async () => {
             class="d-flex align-center gap-3 pa-5 position-relative flex-column flex-sm-row"
             :class="index ? 'border-t' : ''"
           >
-            <IconBtn class="checkout-item-remove-btn" @click="removeItem(item)">
+            <IconBtn class="checkout-item-remove-btn no-print" @click="removeItem(item)">
               <VIcon size="20" icon="tabler-x" />
             </IconBtn>
 
@@ -178,27 +248,13 @@ onMounted(async () => {
             Chi phí sửa chữa thiết bị thực tế
           </h6>
 
-          <div class="text-high-emphasis">
+          <div>
+          <div class="text-high-emphasis" v-for="item in dataLinhKien.dataResponseLinhKiens" :key="item.id">
             <div class="d-flex justify-space-between mb-2">
-              <span>Thanh Ram 4gb</span>
-              <span>120.000đ</span>
+              <span style="margin-right: 4px">{{item.tenLinhKien}}</span>
+              <span>{{formatCurrency(item.giaBan)}}</span>
             </div>
-
-            <div class="d-flex justify-space-between mb-2">
-              <span>SSD</span>
-              <span>120.000đ</span>
-            </div>
-
-            <div class="d-flex justify-space-between">
-              <span>Vận chuyển</span>
-
-              <div>
-                <span class="text-decoration-line-through text-disabled me-2"
-                  >50.000đ</span
-                >
-                <VChip label color="success"> Free </VChip>
-              </div>
-            </div>
+          </div>
           </div>
         </VCardText>
 
@@ -206,11 +262,23 @@ onMounted(async () => {
 
         <VCardText class="d-flex justify-space-between py-4">
           <h6 class="text-base font-weight-medium">Tổng tiền</h6>
-          <h6 class="text-base font-weight-medium">240.000đ</h6>
+          <h6 class="text-base font-weight-medium">{{(dataLinhKien.tongTien == 0 || dataLinhKien.tongTien == undefined) ? formatCurrency(0) : formatCurrency(dataLinhKien.tongTien)}}</h6>
         </VCardText>
       </VCard>
-
-      <VBtn block class="mt-4" @click="createBill"> Thanh toán </VBtn>
+      <VBtn
+              block
+              variant="tonal"
+              color="secondary"
+              class="mb-2 mt-4 no-print"
+              @click="printInvoice"
+            >
+              In hóa đơn
+            </VBtn>
+      <VBtn block class="mt-4 no-print" @click="createBill"> Thanh toán </VBtn>
     </VCol>
   </VRow>
 </template>
+
+<style scoped>
+
+</style>

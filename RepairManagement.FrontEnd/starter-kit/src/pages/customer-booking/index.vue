@@ -6,6 +6,7 @@ import {
 } from '@/views/pages/customer-booking/useCalendar'
 import { useCalendarStore } from '@/views/pages/customer-booking/useCalendarStore'
 import { useResponsiveLeftSidebar } from '@core/composable/useResponsiveSidebar'
+import {AuthApi} from "@/apis/auth/authApi"
 import { BookingApi } from "@/apis/booking/bookingApi"
 import { ref, onMounted, reactive, watchEffect } from "vue";
 
@@ -13,32 +14,26 @@ import { ref, onMounted, reactive, watchEffect } from "vue";
 import CalendarEventHandler from '@/views/pages/customer-booking/CalendarEventHandler.vue'
 
 const store = useCalendarStore()
-
-// Event data
+const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 const event = ref(structuredClone(blankEvent))
 const isEventHandlerSidebarActive = ref(false)
 const listBooking = ref([]);
 
-// List of booked dates
-const bookedDates = ref(['2024-12-11']); // Set default value
+const bookedDates = ref([]);
 
 const getAllBookings = async () => {
   try {
-    const result = await BookingApi.getAllBookings();
-    if (result?.data) {
-      listBooking.value = result.data;
+    const khachHang = await AuthApi.getKhachHangByUserId(userInfo.Id);
+    const result = await BookingApi.getAllBookings(khachHang.data.id);
+    listBooking.value = result.data;
       listBooking.value.forEach(element => {
         if (element?.thoiGianDat) {
           const formattedDate = new Date(element.thoiGianDat).toISOString().split('T')[0];
-          // Check if the date is not already in the bookedDates array to avoid duplicates
           if (!bookedDates.value.includes(formattedDate)) {
             bookedDates.value.push(formattedDate);
           }
         }
       });
-    } else {
-      console.error('No data received from BookingApi.getAllBookings');
-    }
   } catch (error) {
     console.error('Error fetching bookings:', error);
   }
@@ -54,10 +49,11 @@ const { refCalendar, calendarOptions, addEvent, updateEvent, removeEvent, jumpTo
 
 const customizedCalendarOptions = ref({
   ...calendarOptions,
-  dayCellDidMount: (info) => {
+  dayCellDidMount: async (info) => {
+    await getAllBookings();
     const formattedDate = info.date.toISOString().split('T')[0];
-
-    if (bookedDates.value.includes(formattedDate)) {
+    const listArray = Object.values(bookedDates.value)
+    if (listArray.includes(formattedDate)) {
       info.el.style.fontWeight = 'bold';
       info.el.style.backgroundColor = '#e0f7fa';
     }

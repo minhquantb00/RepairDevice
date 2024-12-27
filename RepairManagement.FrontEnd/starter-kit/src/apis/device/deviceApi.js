@@ -71,7 +71,23 @@ const createVnPayUrl = async (billId) => {
     throw error;
   }
 };
+const getUserById = async (id) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetUserById/${id}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
 
+const getAllThongBaoByKhachHang = async (khachHangId) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllThongBaoByKhachHang?khachHangId=${khachHangId}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
 
 const getAllThietBis = async (params) => {
   try {
@@ -144,8 +160,29 @@ const getPhanCongCongViecDaHoanThanh = async (params) => {
   }
 };
 
+const getDataLinhKien = async (billId) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetDataLinhKien?billId=${billId}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getDataLinhKienByNguoiDung = async (nguoiDungId) => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetDataLinhKienByNguoiDung?nguoiDungId=${nguoiDungId}`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const DeviceApi = {
+  getDataLinhKienByNguoiDung,
+  getDataLinhKien,
   getPhanCongCongViecDaHoanThanh,
+  getAllThongBaoByKhachHang,
   getPhanCongCongViecChoXuLy,
   getPhanCongCongViecDangXuLy,
   createThietBi,
@@ -155,5 +192,6 @@ export const DeviceApi = {
   getAllLoaiThietBis,
   getLoaiThietBiById,
   createHoaDon,
-  createVnPayUrl
+  createVnPayUrl,
+  getUserById
 }

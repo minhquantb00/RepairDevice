@@ -25,7 +25,7 @@ namespace RepairManagement.Api.Controllers
             return Ok(await _datLichService.DatLichSuaChua(request));
         }
         [HttpGet]
-        public async Task<IActionResult> GetAllBookings(int khachHangId)
+        public async Task<IActionResult> GetAllBookings([FromQuery] int khachHangId)
         {
             return Ok(await _datLichService.GetAllBookings(khachHangId));
         }

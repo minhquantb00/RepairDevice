@@ -335,7 +335,7 @@ namespace RepairManagement.Application.Service.Implement
             }
         }
 
-        public Task<ResponseObject<DataResponseLogin>> RenewAccessTokenAsync(Request_RenewAccessToken token)
+        public  Task<ResponseObject<DataResponseLogin>> RenewAccessTokenAsync(Request_RenewAccessToken token)
         {
             throw new NotImplementedException();
         }
@@ -412,6 +412,22 @@ namespace RepairManagement.Application.Service.Implement
 
             return principal;
 
+        }
+
+        public async Task<DataResponseKhachHang> GetKhachHangByUserId(int userId)
+        {
+            var khachHang = await _khachHangRepository.GetAsync(item => item.NguoiDungId == userId);
+            return new DataResponseKhachHang
+            {
+                CreateTime = khachHang.CreateTime,
+                DiaChi = khachHang.DiaChi,
+                Diem = khachHang.Diem,
+                Email = khachHang.Email,
+                HoVaTen = khachHang.HoVaTen,
+                Id = khachHang.Id,
+                SoDienThoai = khachHang.SoDienThoai,
+                UpdateTime = khachHang.UpdateTime
+            };
         }
 
 

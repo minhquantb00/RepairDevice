@@ -55,10 +55,14 @@ namespace RepairManagement.Application.Service.Implement
         private readonly IRepository<ChiTietHoaDon> _chiTietHoaDonRepository;
         private readonly IConfiguration _configuration;
         private readonly HoaDonConverter _hoaDonConverter;
+        private readonly IRepository<LichSuTichDiem> _lichSuTichDiemRepository;
+        private readonly ThongBaoConverter _thongBaoConverter;
 
 
-        public ThietBiService(IRepository<ThietBi> thietBiRepository, ThietBiConverter thietBiConverter, IHttpContextAccessor contextAccessor, IRepository<LoaiThietBi> loaiThietBiRepository, IRepository<ThietBiSuaChua> thietBiSuaChuaRepository, IRepository<LichSuSuaChua> lichSuSuaChuaRepository, IRepository<KhachHang> khachHangRepository, LichSuSuaChuaConverter lichSuSuaChuaConverter, ThietBiSuaChuaConverter thietBiSuaChuaConverter, LinhKienSuaChuaConverter linhKienSuaChuaConverter, IRepository<LinhKienSuaChuaThietBi> linhKienSuaChuaThietBiRepository, IRepository<LinhKien> linhKienRepository, IRepository<NguoiDung> nguoiDungRepository, NguoiDungConverter nguoiDungConverter, IRepository<PhanCongCongViec> phanCongCongViecRepository, PhanCongCongViecConverter phanCongViecConverter, IRepository<HangTonKho> hangTonKhoRepository, IRepository<XuatNhapKho> xuatNhapKhoRepository, XuatNhapKhoConverter xuatNhapKhoConverter, LinhKienConverter linhKienConverter, IAuthService authService, IRepository<ThongBao> thongBaoRepository, IRepository<HieuSuatNhanVien> hieuSuatNhanVienRepository, IEmailService emailService, HieuSuatConverter hieuSuatConverter, IRepository<HoaDon> hoaDonRepository, IRepository<ChiTietHoaDon> chiTietHoaDonRepository, IConfiguration configuration, HoaDonConverter hoaDonConverter)
+
+        public ThietBiService(IRepository<ThietBi> thietBiRepository, ThietBiConverter thietBiConverter, IHttpContextAccessor contextAccessor, IRepository<LoaiThietBi> loaiThietBiRepository, IRepository<ThietBiSuaChua> thietBiSuaChuaRepository, IRepository<LichSuSuaChua> lichSuSuaChuaRepository, IRepository<KhachHang> khachHangRepository, LichSuSuaChuaConverter lichSuSuaChuaConverter, ThietBiSuaChuaConverter thietBiSuaChuaConverter, LinhKienSuaChuaConverter linhKienSuaChuaConverter, IRepository<LinhKienSuaChuaThietBi> linhKienSuaChuaThietBiRepository, IRepository<LinhKien> linhKienRepository, IRepository<NguoiDung> nguoiDungRepository, NguoiDungConverter nguoiDungConverter, IRepository<PhanCongCongViec> phanCongCongViecRepository, PhanCongCongViecConverter phanCongViecConverter, IRepository<HangTonKho> hangTonKhoRepository, IRepository<XuatNhapKho> xuatNhapKhoRepository, XuatNhapKhoConverter xuatNhapKhoConverter, LinhKienConverter linhKienConverter, IAuthService authService, IRepository<ThongBao> thongBaoRepository, IRepository<HieuSuatNhanVien> hieuSuatNhanVienRepository, IEmailService emailService, HieuSuatConverter hieuSuatConverter, IRepository<HoaDon> hoaDonRepository, IRepository<ChiTietHoaDon> chiTietHoaDonRepository, IConfiguration configuration, HoaDonConverter hoaDonConverter, IRepository<LichSuTichDiem> lichSuTichDiemRepository, ThongBaoConverter thongBaoConverter)
         {
+            _lichSuTichDiemRepository = lichSuTichDiemRepository;
             _hoaDonConverter = hoaDonConverter;
             _configuration = configuration;
             _hoaDonRepository = hoaDonRepository;
@@ -88,6 +92,7 @@ namespace RepairManagement.Application.Service.Implement
             _authService = authService;
             _hieuSuatNhanVienRepository = hieuSuatNhanVienRepository;
             _emailService = emailService;
+            _thongBaoConverter = thongBaoConverter;
         }
 
         public async Task<ResponseObject<DataResponseLichSuSuaChua>> CreateLichSuSuaChua(Request_CreateLichSuSuaChua request)
@@ -174,7 +179,7 @@ namespace RepairManagement.Application.Service.Implement
                     Status = StatusCodes.Status404NotFound
                 };
             }
-            var linhKienSuaChua = await _linhKienSuaChuaThietBiRepository.GetAsync(item => item.LinhKienId == request.LinhKienId);
+            var linhKienSuaChua = await _linhKienSuaChuaThietBiRepository.GetAsync(item => item.LinhKienId == request.LinhKienId && item.ThietBiSuaChuaId == thietBiSuaChua.Id);
             if (linhKienSuaChua != null)
             {
                 linhKienSuaChua.SoLuongDung += request.SoLuongDung;
@@ -1164,10 +1169,19 @@ namespace RepairManagement.Application.Service.Implement
             var khachHang = await _khachHangRepository.GetAsync(item => item.NguoiDungId == int.Parse(userId));
             var listThietBiSuaChua = await _thietBiSuaChuaRepository.GetAllAsync(item => item.KhachHangId == khachHang.Id).Result.Select(item => item.Id).Distinct().ToListAsync();
             var listPhanCongId = _phanCongCongViecRepository.GetAllAsync(x => listThietBiSuaChua.Contains(x.ThietBiSuaChuaId) && x.Status == Commons.Enums.Enumerate.ThietBiSuaChuaStatus.HoanThanh).Result.Select(item => item.Id).Distinct().ToList();
-
+            //var listBillId = _chiTietHoaDonRepository.GetAllAsync(item => listThietBiSuaChua.Contains(item.ThietBiSuaChuaId)).Result.Select(x => x.HoaDonId).ToHashSet();
             var query = await _phanCongCongViecRepository.GetAllAsync(x => listPhanCongId.Contains(x.Id));
-            var result = query.Select(item => _phanCongViecConverter.EntityToDTO(item));
-            return result;
+            var result = query.Select(item => _phanCongViecConverter.EntityToDTO(item)).ToList();
+
+            //foreach(var item in listBillId)
+            //{
+            //    var bill = await _hoaDonRepository.GetByIdAsync(item);
+            //    if(bill.BillStatus == Commons.Enums.Enumerate.BillStatus.DaThanhToan)
+            //    {
+            //        result.Remove()
+            //    }
+            //}
+            return result.AsQueryable();
         }
 
         public async Task<ResponseObject<string>> CreateUrlPayment(int billId, HttpContext httpContext)
@@ -1278,6 +1292,31 @@ namespace RepairManagement.Application.Service.Implement
                             Content = "Bạn đã thanh toán thành công! Xin chân thành cảm ơn"
                         });
                     }
+                    LichSuTichDiem record = new LichSuTichDiem
+                    {
+                        Action  = Commons.Enums.Enumerate.Action.TichDiem,
+                        CreateTime = DateTime.Now,
+                        KhachHangId = khachHang.Id,
+                        Point = 1
+                    };
+                    record = await _lichSuTichDiemRepository.CreateAsync(record);
+
+                    khachHang.Diem =  _lichSuTichDiemRepository.GetAllAsync(record => record.KhachHangId == khachHang.Id).Result.Sum(x => x.Point);
+                    khachHang = await _khachHangRepository.UpdateAsync(khachHang);
+
+                    var listCTHoaDon = await _chiTietHoaDonRepository.GetAllAsync(record => record.HoaDonId == bill.Id);
+                    foreach(var item in listCTHoaDon)
+                    {
+                        var thietBiSuaChua = await _thietBiSuaChuaRepository.GetAsync(x => x.Id == item.ThietBiSuaChuaId);
+                        if(thietBiSuaChua != null)
+                        {
+                            var phanCongCongViec = await _phanCongCongViecRepository.GetAllAsync(x => x.ThietBiSuaChuaId == thietBiSuaChua.Id);
+                            if (phanCongCongViec.Any())
+                            {
+                                await _phanCongCongViecRepository.DeleteRangeAsync(phanCongCongViec);
+                            }
+                        }
+                    }
                     return "Giao dịch thành công đơn hàng " + bill.Id;
                 }
                 else
@@ -1289,6 +1328,160 @@ namespace RepairManagement.Application.Service.Implement
             {
                 return "Có lỗi trong quá trình xử lý";
             }
+        }
+
+        public async Task<DataResponseGetDataLinhKien> GetDataLinhKien(int billId)
+        {
+            var bill = await _hoaDonRepository.GetByIdAsync(billId);
+            if (bill == null)
+            {
+                throw new ArgumentNullException(nameof(bill));
+            }
+
+            var billDetails = await _chiTietHoaDonRepository.GetAllAsync(x => x.HoaDonId == billId);
+            if (!billDetails.Any())
+            {
+                return null;
+            }
+
+            List<DataResponseLinhKien> listDataLinhKien = new List<DataResponseLinhKien>();
+            var tongTien = 0;
+
+            foreach (var billDetail in billDetails)
+            {
+                var thietBiSuaChua = await _thietBiSuaChuaRepository.GetByIdAsync(billDetail.ThietBiSuaChuaId);
+                if (thietBiSuaChua != null)
+                {
+                    var listLinhKienSuaChua = await _linhKienSuaChuaThietBiRepository
+                        .GetAllAsync(x => x.ThietBiSuaChuaId == thietBiSuaChua.Id);
+
+                    var linhKienIds = listLinhKienSuaChua.Select(item => item.LinhKienId).ToHashSet();
+
+                    if (linhKienIds.Any())
+                    {
+                        var listLinhKien = await _linhKienRepository
+                            .GetAllAsync(item => linhKienIds.Contains(item.Id));
+
+                        var resultLinhKien = listLinhKien
+                            .Select(x => _linhKienConverter.EntityToDTO(x))
+                            .ToList();
+
+                        listDataLinhKien.AddRange(resultLinhKien);
+
+                        tongTien += (int) resultLinhKien.Sum(x => x.GiaBan);
+                    }
+                }
+            }
+
+            return new DataResponseGetDataLinhKien
+            {
+                DataResponseLinhKiens = listDataLinhKien.AsQueryable(),
+                TongTien = tongTien
+            };
+        }
+
+        public async Task<DataResponseGetDataLinhKien> GetDataLinhKienByNguoiDung(int nguoiDungId)
+        {
+            // Lấy thông tin người dùng
+            var nguoiDung = await _nguoiDungRepository.GetByIdAsync(nguoiDungId);
+            if (nguoiDung == null)
+            {
+                throw new ArgumentNullException(nameof(nguoiDung));
+            }
+
+            // Lấy thông tin khách hàng của người dùng
+            var khachHang = await _khachHangRepository.GetAsync(x => x.NguoiDungId == nguoiDungId);
+            if (khachHang == null)
+            {
+                throw new ArgumentNullException(nameof(khachHang));
+            }
+
+            // Lấy danh sách thiết bị sửa chữa đã hoàn thành của khách hàng
+            var listThietBiSuaChuaId = (await _thietBiSuaChuaRepository
+                .GetAllAsync(record => record.KhachHangId == khachHang.Id && record.Status == Commons.Enums.Enumerate.ThietBiSuaChuaStatus.HoanThanh))
+                .Select(item => item.Id)
+                .ToHashSet();
+
+            if (!listThietBiSuaChuaId.Any())
+            {
+                throw new ArgumentNullException(nameof(listThietBiSuaChuaId));
+            }
+
+            // Lấy chi tiết hóa đơn của các thiết bị sửa chữa
+            var listBillDetail = await _chiTietHoaDonRepository.GetAllAsync(x => listThietBiSuaChuaId.Contains(x.ThietBiSuaChuaId));
+
+            // Khởi tạo danh sách Linh Kiện Id
+            var listLinhKienId = new List<int>();
+
+            // Duyệt qua chi tiết hóa đơn để lấy thông tin Linh Kiện
+            foreach (var item in listBillDetail)
+            {
+                var bill = await _hoaDonRepository.GetAsync(x => x.KhachHangId == khachHang.Id);
+                if (bill == null || bill.BillStatus == Commons.Enums.Enumerate.BillStatus.ChuaThanhToan)
+                {
+                    // Lấy Linh Kiện nếu hóa đơn chưa thanh toán
+                    var linhKienIds = await _linhKienSuaChuaThietBiRepository
+                        .GetAllAsync(x => x.ThietBiSuaChuaId == item.ThietBiSuaChuaId).Result
+                        .Select(y => y.LinhKienId)
+                        .ToListAsync();
+                    listLinhKienId.AddRange(linhKienIds);
+                }
+                else
+                {
+                    // Lấy Linh Kiện nếu hóa đơn đã thanh toán
+                    var linhKienIds = await _linhKienSuaChuaThietBiRepository
+                        .GetAllAsync(x => x.ThietBiSuaChuaId != item.ThietBiSuaChuaId).Result
+                        .Select(y => y.LinhKienId)
+                        .ToListAsync();
+                    listLinhKienId.AddRange(linhKienIds);
+                }
+            }
+
+            // Kiểm tra nếu không có Linh Kiện nào
+            if (!listLinhKienId.Any())
+            {
+                return new DataResponseGetDataLinhKien
+                {
+                    DataResponseLinhKiens = null,
+                    TongTien = 0
+                };
+            }
+
+            // Lấy thông tin các Linh Kiện từ ID đã lọc
+            var listLinhKien = await _linhKienRepository.GetAllAsync(record => listLinhKienId.Contains(record.Id));
+            if (listLinhKien == null || !listLinhKien.Any())
+            {
+                return new DataResponseGetDataLinhKien
+                {
+                    DataResponseLinhKiens = null,
+                    TongTien = 0
+                };
+            }
+
+            // Tính tổng tiền của các Linh Kiện
+            var tongTien = (int)listLinhKien.Sum(x => x.GiaBan);
+
+            // Trả về kết quả
+            return new DataResponseGetDataLinhKien
+            {
+                DataResponseLinhKiens = listLinhKien.Select(item => _linhKienConverter.EntityToDTO(item)),
+                TongTien = tongTien
+            };
+        }
+
+
+
+
+
+        public async Task<IQueryable<DataResponseThongBao>> GetAllThongBaoByKhachHang(int khachHangId)
+        {
+            var query = await _thongBaoRepository.GetAllAsync(item => item.KhachHangId == khachHangId);
+            if(query == null)
+            {
+                return null;
+            }
+            var result = query.Select(item => _thongBaoConverter.EntityToDTO(item));
+            return result;
         }
 
         public async Task<ResponseObject<DataResponseHoaDon>> CreateHoaDon(Request_CreateHoaDon request)

@@ -74,6 +74,7 @@ builder.Services.AddScoped<XuatNhapKhoConverter>();
 builder.Services.AddScoped<HieuSuatConverter>();
 builder.Services.AddScoped<ChiTietHoaDonConverter>();
 builder.Services.AddScoped<HoaDonConverter>();
+builder.Services.AddScoped<ThongBaoConverter>();
 
 builder.Services.AddScoped<IRepository<KhachHang>, Repository<KhachHang>>();
 builder.Services.AddScoped<IRepository<RefreshToken>, Repository<RefreshToken>>();

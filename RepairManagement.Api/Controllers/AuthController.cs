@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RepairManagement.Application.Payloads.Requests.Auth;
+using RepairManagement.Application.Payloads.Responses.User;
 using RepairManagement.Application.Service.Interface;
 using RepairManagement.Commons.Constants;
 
@@ -22,6 +23,11 @@ namespace RepairManagement.Api.Controllers
         public async Task<IActionResult> Register(Request_register request)
         {
             return Ok(await _authService.Register(request));
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetKhachHangByUserId([FromQuery]int userId)
+        {
+            return Ok(await _authService.GetKhachHangByUserId(userId));
         }
 
         [HttpPost]

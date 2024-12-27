@@ -77,7 +77,7 @@ namespace RepairManagement.Application.Service.Implement
                         Status = StatusCodes.Status400BadRequest
                     };
                 }
-                var datLichCheck = await _datLichSuaChuaRepository.GetAsync(item => item.ThoiGianDat == thoiGianDat && item.KhachHangId == khachHang.Id);
+                var datLichCheck = await _datLichSuaChuaRepository.GetAsync(item => item.ThoiGianDat == thoiGianDat);
                 if(datLichCheck != null)
                 {
                     return new ResponseObject<DataResponseDatLich>
@@ -97,7 +97,7 @@ namespace RepairManagement.Application.Service.Implement
                     MoTa = request.MoTa,
                     SoDienThoai = request.SoDienThoai,
                     TenThietBi = request.TenThietBi,
-                    ThoiGianDat = request.ThoiGianDat,
+                    ThoiGianDat = thoiGianDat,
                 };
                 item = await _datLichSuaChuaRepository.CreateAsync(item);
 
@@ -131,7 +131,7 @@ namespace RepairManagement.Application.Service.Implement
                     Status = StatusCodes.Status400BadRequest
                 };
             }
-            var datLichCheckItem = await _datLichSuaChuaRepository.GetAsync(item => item.ThoiGianDat == thoiGianDatTime && item.KhachHangId == khachHangItem.Id);
+            var datLichCheckItem = await _datLichSuaChuaRepository.GetAsync(item => item.ThoiGianDat == thoiGianDatTime);
             if (datLichCheckItem != null)
             {
                 return new ResponseObject<DataResponseDatLich>
@@ -152,7 +152,7 @@ namespace RepairManagement.Application.Service.Implement
                 MoTa = request.MoTa,
                 SoDienThoai = request.SoDienThoai,
                 TenThietBi = request.TenThietBi,
-                ThoiGianDat = request.ThoiGianDat,
+                ThoiGianDat = thoiGianDatTime,
             };
             datLich = await _datLichSuaChuaRepository.CreateAsync(datLich);
             var message = new Request_Message(new string[] { khachHangItem.Email }, "Thông tin đặt lịch: ", $"Thông đặt lịch của bạn đã được ghi nhận.");

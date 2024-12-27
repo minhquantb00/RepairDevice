@@ -33,5 +33,11 @@
         target="noopener noreferrer"
       >Documentation</a>
     </span>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="AI_chat"
+      agent-id="4f90732f-36c6-462b-ba93-61244d084c89"
+      language-code="en"
+    ></df-messenger>
   </div>
 </template>

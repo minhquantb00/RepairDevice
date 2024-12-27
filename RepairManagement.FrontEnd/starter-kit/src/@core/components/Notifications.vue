@@ -26,7 +26,29 @@ const emit = defineEmits([
   'click:notification',
 ])
 
-const isAllMarkRead = computed(() => props.notifications.some(item => item.isSeen === false))
+const formatFacebookTime = (timestamp) => {
+  const now = new Date();
+  const notificationTime = new Date(timestamp);
+  const diffInSeconds = Math.floor((now - notificationTime) / 1000);
+
+  if (diffInSeconds < 60) {
+    return `${diffInSeconds} giây trước`;
+  } else if (diffInSeconds < 3600) {
+    const minutes = Math.floor(diffInSeconds / 60);
+    return `${minutes} phút trước`;
+  } else if (diffInSeconds < 86400) {
+    const hours = Math.floor(diffInSeconds / 3600);
+    return `${hours} giờ trước`;
+  } else {
+    const days = Math.floor(diffInSeconds / 86400);
+    return `${days} ngày trước`;
+  }
+}
+
+// Sử dụng hàm để định dạng thời gian
+const formattedTime = computed(() => formatFacebookTime(notificationTime.value));
+
+const isAllMarkRead = computed(() => props.notifications.some(item => item.daXem === false))
 
 const markAllReadOrUnread = () => {
   const allNotificationsIds = props.notifications.map(item => item.id)
@@ -37,7 +59,7 @@ const markAllReadOrUnread = () => {
 }
 
 const totalUnseenNotifications = computed(() => {
-  return props.notifications.filter(item => item.isSeen === false).length
+  return props.notifications.filter(item => item.daXem === false).length
 })
 </script>
 
@@ -45,7 +67,7 @@ const totalUnseenNotifications = computed(() => {
   <IconBtn id="notification-btn">
     <VBadge
       v-bind="props.badgeProps"
-      :model-value="props.notifications.some(n => !n.isSeen)"
+      :model-value="props.notifications.some(n => !n.daXem)"
       color="error"
       :content="totalUnseenNotifications"
       class="notification-badge"
@@ -67,7 +89,7 @@ const totalUnseenNotifications = computed(() => {
         <!-- 👉 Header -->
         <VCardItem class="notification-section">
           <VCardTitle class="text-lg">
-            Notifications
+            Thông báo
           </VCardTitle>
 
           <template #append>
@@ -81,7 +103,7 @@ const totalUnseenNotifications = computed(() => {
                 activator="parent"
                 location="start"
               >
-                {{ !isAllMarkRead ? 'Mark all as unread' : 'Mark all as read' }}
+                {{ !isAllMarkRead ? 'Đánh dấu tất cả chưa đọc' : 'Đánh dấu tất cả đã đọc' }}
               </VTooltip>
             </IconBtn>
           </template>
@@ -97,7 +119,7 @@ const totalUnseenNotifications = computed(() => {
           <VList class="notification-list rounded-0 py-0">
             <template
               v-for="(notification, index) in props.notifications"
-              :key="notification.title"
+              :key="notification.noiDung"
             >
               <VDivider v-if="index > 0" />
               <VListItem
@@ -113,28 +135,23 @@ const totalUnseenNotifications = computed(() => {
                   <VListItemAction start>
                     <VAvatar
                       size="40"
-                      :color="notification.color && notification.icon ? notification.color : undefined"
-                      :image="notification.img || undefined"
-                      :icon="notification.icon || undefined"
-                      :variant="notification.img ? undefined : 'tonal' "
+                      image="https://tse1.mm.bing.net/th?id=OIP.A-MoZaaiyxVIGxFIB-OZswHaHZ&pid=Api&P=0&h=180"
                     >
-                      <span v-if="notification.text">{{ avatarText(notification.text) }}</span>
                     </VAvatar>
                   </VListItemAction>
                 </template>
 
-                <VListItemTitle>{{ notification.title }}</VListItemTitle>
-                <VListItemSubtitle>{{ notification.subtitle }}</VListItemSubtitle>
-                <span class="text-xs text-disabled">{{ notification.time }}</span>
+                <VListItemTitle>{{ notification.noiDung }}</VListItemTitle>
+                <span class="text-xs text-disabled">{{ formatFacebookTime(notification.thoiGianGui) }}</span>
 
                 <!-- Slot: Append -->
                 <template #append>
                   <div class="d-flex flex-column align-center gap-4">
                     <VBadge
                       dot
-                      :color="!notification.isSeen ? 'primary' : '#a8aaae'"
-                      :class="`${notification.isSeen ? 'visible-in-hover' : ''} ms-1`"
-                      @click.stop="$emit(notification.isSeen ? 'unread' : 'read', [notification.id])"
+                      :color="!notification.daXem ? 'primary' : '#a8aaae'"
+                      :class="`${notification.daXem ? 'visible-in-hover' : ''} ms-1`"
+                      @click.stop="$emit(notification.daXem ? 'unread' : 'read', [notification.id])"
                     />
 
                     <div style="block-size: 28px; inline-size: 28px;">
@@ -159,7 +176,7 @@ const totalUnseenNotifications = computed(() => {
               class="text-center text-medium-emphasis"
               style="block-size: 56px;"
             >
-              <VListItemTitle>No Notification Found!</VListItemTitle>
+              <VListItemTitle>Không có thông báo</VListItemTitle>
             </VListItem>
           </VList>
         </PerfectScrollbar>
@@ -172,7 +189,7 @@ const totalUnseenNotifications = computed(() => {
           class="notification-footer"
         >
           <VBtn block>
-            View All Notifications
+            Xem tất cả thông báo
           </VBtn>
         </VCardActions>
       </VCard>
