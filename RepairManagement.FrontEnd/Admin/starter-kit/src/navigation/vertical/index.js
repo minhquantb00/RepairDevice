@@ -46,7 +46,7 @@ const menu = [
     title: "Thống kê doanh số",
     to: {path: "statistics"},
     Permission: [RoleEnum.Admin],
-    icon: {icon: "tabler-user-check"}
+    icon: {icon: "tabler-chart-area-line"}
   }
 ];
 

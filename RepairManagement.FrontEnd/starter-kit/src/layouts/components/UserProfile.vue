@@ -77,21 +77,7 @@ onMounted(async () => {
 
           <VDivider class="my-2" />
 
-          <!-- 👉 Profile -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-user"
-                size="22"
-              />
-            </template>
-
-            <VListItemTitle>Trang cá nhân</VListItemTitle>
-          </VListItem>
-
-          <!-- Divider -->
-          <VDivider class="my-2" />
+          
 
           <!-- 👉 Logout -->
           <VListItem @click="logOut">

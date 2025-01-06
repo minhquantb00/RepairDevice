@@ -54,7 +54,7 @@ const chartOptions = ref({
 const getStatistics = async () => {
   const result = await DeviceApi.getStatistics();
   console.log(result);
-  const labels = Array.from({ length: 12 }, (_, i) => `${i + 1}/2024`);
+  const labels = Array.from({ length: 12 }, (_, i) => `Tháng ${i + 1}`);
   chartData.value.labels.push(...labels);
   const doanhSoTrenMonth = Array(12).fill(0);
   result.data.forEach(({ thang, doanhSo }) => {
@@ -64,11 +64,11 @@ const getStatistics = async () => {
     labels: labels,
     datasets: [
       {
-        label: "Doanh số theo tháng",
+        label: "Doanh số công ty theo tháng",
         data: doanhSoTrenMonth,
-        backgroundColor: "rgba(75, 192, 192, 0.2)", // Màu nền của cột
-        borderColor: "rgba(75, 192, 192, 1)", // Màu viền của cột
-        borderWidth: 1, // Độ dày viền
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
+        borderWidth: 1,
       },
     ],
   };
@@ -78,7 +78,7 @@ watch(
   () => chartData.value.datasets[0].data,
   () => {
     if (chartInstance) {
-      chartInstance.update(); // Cập nhật biểu đồ khi dữ liệu thay đổi
+      chartInstance.update();
     }
   }
 );
