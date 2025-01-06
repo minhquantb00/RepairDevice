@@ -54,5 +54,7 @@ namespace RepairManagement.Application.Service.Interface
         Task<IQueryable<DataResponseThongBao>> GetAllThongBaoByKhachHang(int khachHangId);
         Task<DataResponseGetDataLinhKien> GetDataLinhKien(int billId);
         Task<DataResponseGetDataLinhKien> GetDataLinhKienByNguoiDung(int nguoiDungId);
+        Task<IQueryable<DataResponseStatistics>> GetStatistics();
+        
     }
 }

@@ -218,6 +218,15 @@ const getAllThietBiOfCustomer = async (params) => {
   }
 };
 
+const getStatistics = async () => {
+  try {
+    const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetStatistics`);
+    return result;
+  } catch (error) {
+    throw error;
+  }
+};
+
 const getAllThietBiSuaChua = async (params) => {
   try {
     const result = await axios.get(`https://localhost:7183/api/${CONTROLLER_NAME}/GetAllThietBiSuaChua`, {
@@ -387,5 +396,6 @@ export const DeviceApi = {
   getPhanCongCongViecById,
   createLinhKien,
   updateLinhKien,
-  xoaLinhKien
+  xoaLinhKien,
+  getStatistics
 }

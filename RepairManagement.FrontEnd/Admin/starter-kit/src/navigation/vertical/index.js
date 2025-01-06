@@ -42,6 +42,12 @@ const menu = [
     Permission: [RoleEnum.Admin],
     icon: { icon: "tabler-user-check" },
   },
+  {
+    title: "Thống kê doanh số",
+    to: {path: "statistics"},
+    Permission: [RoleEnum.Admin],
+    icon: {icon: "tabler-user-check"}
+  }
 ];
 
 const filteredMenu = menu.filter((item) => {

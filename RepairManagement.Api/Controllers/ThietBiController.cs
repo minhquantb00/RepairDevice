@@ -49,6 +49,11 @@ namespace RepairManagement.Api.Controllers
         {
             return Ok(await _loaiThietBiService.CreateLoaiThietBi(request));
         }
+        [HttpGet]
+        public async Task<IActionResult> GetStatistics()
+        {
+            return Ok(await _thietBiService.GetStatistics());   
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetAllLoaiThietBis()

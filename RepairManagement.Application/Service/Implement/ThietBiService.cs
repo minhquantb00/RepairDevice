@@ -1541,5 +1541,29 @@ namespace RepairManagement.Application.Service.Implement
             }
             return result;
         }
+
+        public async Task<IQueryable<DataResponseStatistics>> GetStatistics()
+        {
+            var bills = await _hoaDonRepository.GetAllAsync(record => record.BillStatus == Commons.Enums.Enumerate.BillStatus.DaThanhToan);
+
+            var listResult = bills.GroupBy(x => x.CreateTime.Month).Select(group => new DataResponseStatistics
+            {
+                Thang = group.Key,
+                DoanhSo = bills.Sum(item => item.TongTien)
+            });
+
+            var allMonths = Enumerable.Range(1, 12);
+
+            var result = allMonths
+                .Select(month => listResult.FirstOrDefault(stat => stat.Thang == month) ?? new DataResponseStatistics
+                {
+                    Thang = month,
+                    DoanhSo = 0
+                })
+                .OrderBy(stat => stat.Thang)
+                .ToList();
+
+            return result.AsQueryable();
+        }
     }
 }
